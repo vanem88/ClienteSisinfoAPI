@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="PCompletarFrase"
+           identity-type="datastore"
+           persistence-capable-superclass="PreguntaEx">
+	
+	<field name="descripcion">
+             <extension vendor-name="triactive" key="length" value="max 1000"/>
+        </field>
+	
+	<field name="texto">
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+        </field>
+
+<!-- relacion 1 a N con Blancos navegabilidad simple-->
+	<field name="blancos">
+		<collection element-type="Frase">
+		</collection>
+	</field>
+
+        <field name="mostrarOpciones"/>
+    </class>
+    </package>
+</jdo>

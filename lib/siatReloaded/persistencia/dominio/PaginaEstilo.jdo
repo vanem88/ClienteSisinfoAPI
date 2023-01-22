@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="PaginaEstilo"
+           identity-type="datastore"
+	     persistence-capable-superclass="PropiedadPagina">
+    </class>
+    </package>
+</jdo>
+

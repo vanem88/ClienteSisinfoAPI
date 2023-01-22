@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="PlantillaTipoAula"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="nombre" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+
+<!-- relacion N to 1 Con TipoAula Navegabilidad Simple-->
+      <field name="tipoAula" persistence-modifier="persistent">
+      </field>
+
+
+<!-- relacion 1 to N Con PlantillaPermiso-->
+     <field name="plantillaPermisos">
+        <collection element-type="PlantillaPermiso">
+          <extension vendor-name="triactive" key="owner-field" value="plantillaTipoAula" />
+        </collection>
+      </field>
+
+
+    </class>
+    </package>
+</jdo>

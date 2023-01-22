@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Provincia"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="nombre" >
+          <extension vendor-name="triactive" key="length" value="max 55"/>
+      </field>
+
+<!-- relacion 1 to N Con Ciudad-->
+     <field name="ciudades">
+        <collection element-type="Ciudad">
+          <extension vendor-name="triactive" key="owner-field" value="provincia" />
+        </collection>
+      </field>
+
+<!-- relacion N to 1 Con Pais-->
+      <field name="pais" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="provincias"/>
+      </field>
+
+    </class>
+    </package>
+</jdo>

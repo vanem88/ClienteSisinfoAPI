@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="SolicitudClave"
+           identity-type="datastore">
+           
+      <field name="id"/>
+      
+      <field name="estadoSolicitud" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+       
+      <field name="apellido" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+       
+      <field name="nombre" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="numero_doc" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+       
+      <field name="email" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+
+<!-- relacion N to 1 Con Curso Navegabilidad Simple-->
+      <field name="dniEscaneado" persistence-modifier="persistent">
+      </field>
+
+      <field name="fechaSolicitud"/>
+      <field name="fechaResuelto"/>
+      <field name="numeroPedido"/>
+       
+      <field name="observacion" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+    </class>
+    </package>
+</jdo>

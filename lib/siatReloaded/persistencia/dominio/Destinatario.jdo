@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Destinatario"
+           identity-type="datastore">
+      <field name="id"/>
+            
+      <!-- relacion N to 1 Con Mensaje-->
+      <field name="mensaje" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="destinatarios"/>
+      </field>    
+        
+      <!-- relacion N to 1 Con Persona Navegabilidad Simple-->
+      <field name="receptor" persistence-modifier="persistent">
+      </field>
+                
+      <field name="leido" />    
+      <field name="fecha" />    
+	  <field name="eliminado" />
+      <field name="borrado" />
+    </class>
+    </package>
+</jdo>

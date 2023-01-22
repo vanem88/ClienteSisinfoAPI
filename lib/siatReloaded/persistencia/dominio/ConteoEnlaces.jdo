@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="ConteoEnlaces"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="cantidad"/>
+
+<!-- relacion N to 1 Con Persona-->
+      <field name="persona" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="conteoEnlaces"/>
+      </field>
+
+<!-- relacion N to 1 Con Link-->
+      <field name="link" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="conteoEnlaces"/>
+      </field>
+
+    </class>
+    </package>
+</jdo>

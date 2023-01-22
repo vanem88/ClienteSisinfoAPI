@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="TipoAula"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="nombre" >
+          <extension vendor-name="triactive" key="length" value="max 50"/>
+      </field>
+<!--/*CODIGO AGREGADO POR GRUPO CONDE-PEREYRA - TEMA: GRUPOS*/-->
+<!-- relacion 1 to N Con TipoUsuarioEnNivel-->
+     <field name="tipoUsuariosEnNivel">
+        <collection element-type="TipoUsuarioEnNivel">
+          <extension vendor-name="triactive" key="owner-field" value="tipoAula" />
+        </collection>
+      </field>
+<!--/*HASTA ACA*/-->
+    </class>
+    </package>
+</jdo>

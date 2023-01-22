@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="ConfiguracionNotificacion" identity-type="datastore">
+
+    <field name="id"/>
+
+    <field name="desactivarNotificaciones"/>
+    <field name="actualizacionesSiat"/>
+    <field name="altaEnAula"/>
+    <field name="mensajeriaInterna"/>
+    
+	<field name="actividadCreada"/>
+	<field name="actividadModificada"/>
+	<field name="actividadCalificada"/>
+	<field name="actividadCambioEstado"/>
+	<field name="actividadProrroga"/>
+	<field name="actividadRehacer"/>
+	<field name="actividadDevolucion"/>
+	<field name="actividadEntregas"/>
+	<field name="actividadResumenEntregas"/>
+
+	<field name="noticiaNueva"/>
+	<field name="mensajePizarronNuevo"/>
+
+	<field name="foroNuevo"/>
+	<field name="foroModificado"/>
+	<field name="foroPorCerrar"/>
+	<field name="foroCerrado"/>
+	<field name="foroNuevaOpinion"/>
+	<field name="foroNuevaRespuesta"/>
+	<field name="foroNuevoComentario"/>
+	<field name="foroOpinionEliminada"/>
+	<field name="foroResumenOpiniones"/>
+	<field name="foroResumenRespuestas"/>
+	<field name="foroResumenComentarios"/>
+
+	<field name="materialNuevo"/>
+	<field name="materialCompartidoMi"/>
+	<field name="materialCompartidoAula"/>
+	<field name="materialesResumenNuevo"/>
+	<field name="materialesResumenModificadosEliminados"/>
+	<field name="materialesResumenCompartidosMi"/>
+	<field name="materialesResumenCompartidosAula"/>              
+
+	<field name="secretariaAlumnosInscriptos"/>
+	<field name="secretariaAlumnosSinComision"/>
+	<field name="secretariaInscripcionPorCaducar"/>
+	<field name="secretariaAulaHistorial"/>
+    </class>
+    </package>
+</jdo>

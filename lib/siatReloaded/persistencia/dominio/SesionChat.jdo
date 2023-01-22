@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="SesionChat"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="inicio" />
+      <field name="fin" />
+
+<!-- relacion N to 1 Con Chat-->
+      <field name="chat" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="sesionChats"/>
+      </field>
+
+<!-- relacion N to 1 Con Persona Navegabilidad Simple-->
+      <field name="persona" persistence-modifier="persistent">
+      </field>
+
+    </class>
+    </package>
+</jdo>

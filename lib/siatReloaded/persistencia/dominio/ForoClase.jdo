@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="ForoClase"
+           identity-type="datastore">
+      <field name="id"/>
+
+<!-- relacion N to 1 Con Foro-->
+      <field name="foro" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="clasesForo"/>
+      </field>
+
+<!-- relacion N to 1 Con Clase-->
+      <field name="clase" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="foros"/>
+      </field>
+
+      <field name="requerido" />
+
+    </class>
+    </package>
+</jdo>

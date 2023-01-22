@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Grupo"
+           identity-type="datastore"
+	     persistence-capable-superclass="Comision">
+      <field name="descripcion" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+      <field name="configurados" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+      <field name="autoinscripcion" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+      <field name="invita" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+      <field name="decide" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+      <field name="curioso" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+      <field name="rechazado" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+      <field name="prohibido" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+      <field name="idEnConfiguracion">
+      </field>
+	  <field name="maxCantIntegr">
+      </field>
+      <field name="multiGrupos">
+      </field>
+      <field name="interCom">
+      </field>
+      <field name="fechaInicio"/>
+      <field name="fechaFin"/>
+
+      
+<!-- relacion N to 1 Con EstadoAula Con Navegabilidad Simple-->
+      <field name="estadoGrupo" persistence-modifier="persistent">
+      </field>
+      
+<!-- relacion N to 1 Con TipoGrupo Con Navegabilidad Simple-->
+      <field name="tipoGrupo" persistence-modifier="persistent">
+      </field>      
+
+<!-- relacion 1 to N Con TemaTratadoGrupo-->
+     <field name="temasTratados">
+        <collection element-type="TemaTratadoGrupo">
+          <extension vendor-name="triactive" key="owner-field" value="grupo" />
+        </collection>
+      </field>
+<!-- relacion 1 to N Con ParticipanteExcluido-->
+     <field name="participanteExcluidos">
+        <collection element-type="ParticipanteExcluido">
+          <extension vendor-name="triactive" key="owner-field" value="grupo" />
+        </collection>
+      </field>
+<!-- relacion N to 1 Con Integracion Navegabilidad Simple-->
+      <field name="integracion" persistence-modifier="persistent">
+      </field>  
+<!-- relacion N to 1 Con Anotador Navegabilidad Simple-->
+      <field name="anotador" persistence-modifier="persistent">
+      </field>
+<!-- relacion 1 to N Con ActividadGrupal-->
+     <field name="actividadesGrupales">
+        <collection element-type="ActividadGrupal">
+          <extension vendor-name="triactive" key="owner-field" value="grupo" />
+        </collection>
+      </field>
+<!-- relacion 1 to N Con ForoGrupal-->
+     <field name="forosGrupales">
+        <collection element-type="ForoGrupal">
+          <extension vendor-name="triactive" key="owner-field" value="grupo" />
+        </collection>
+      </field>
+    </class>
+    </package>
+</jdo>

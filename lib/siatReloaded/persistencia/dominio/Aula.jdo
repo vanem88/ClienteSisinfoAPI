@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Aula"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="nombre" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+   
+   <field name="fechaCreacion"/>
+    <field name="espacioFisicoDisponible"/>
+
+<!-- relacion 1 to N Con Actividad-->
+     <field name="actividades">
+        <collection element-type="Actividad">
+          <extension vendor-name="triactive" key="owner-field" value="aula" />
+        </collection>
+      </field>
+
+<!-- relacion N to 1 Con PaginaEstilo Navegabilidad Simple-->
+      <field name="estiloVista" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con TipoAula Navegabilidad Simple-->
+      <field name="tipoAula" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con PaginaEstilo Navegabilidad Simple-->
+      <field name="estiloImpresion" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion 1 to N Con Enlace-->
+     <field name="enlaces">
+        <collection element-type="Enlace">
+          <extension vendor-name="triactive" key="owner-field" value="aula" />
+        </collection>
+      </field>
+
+<!-- relacion 1 to N Con Biblioteca-->
+     <field name="bibliotecas">
+        <collection element-type="Biblioteca">
+          <extension vendor-name="triactive" key="owner-field" value="aula" />
+        </collection>
+      </field>
+
+<!-- relacion 1 to N Con PermisoAcceso-->
+     <field name="permisoAccesos">
+        <collection element-type="PermisoAcceso">
+          <extension vendor-name="triactive" key="owner-field" value="aula" />
+        </collection>
+      </field>
+
+<!-- relacion 1 to N Con AulaTipoUsuario-->
+     <field name="aulaTipoUsuarios">
+        <collection element-type="AulaTipoUsuario">
+          <extension vendor-name="triactive" key="owner-field" value="aula" />
+        </collection>
+      </field>
+
+
+<!-- relacion 1 to N Con Foro-->
+     <field name="foros">
+        <collection element-type="Foro">
+          <extension vendor-name="triactive" key="owner-field" value="aula" />
+        </collection>
+      </field>
+
+
+<!-- relacion 1 to N Con SeguimientoAcceso-->
+     <field name="seguimientoAccesos">
+        <collection element-type="SeguimientoAcceso">
+          <extension vendor-name="triactive" key="owner-field" value="aula" />
+        </collection>
+      </field>
+
+<!-- relacion 1 to N Con Participante-->
+     <field name="participantes">
+        <collection element-type="Participante">
+          <extension vendor-name="triactive" key="owner-field" value="aula" />
+        </collection>
+      </field>
+
+<!-- relacion N to 1 Con EncabezadoPagina Navegabilidad Simple-->
+      <field name="encabezadoPagina" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con ColorFondo Navegabilidad Simple-->
+      <field name="colorFondo" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con AulaCompuesta-->
+      <field name="aulaCompuesta" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="aulas"/>
+      </field>
+
+<!-- relacion N to 1 Con Chat Navegabilidad Simple-->
+      <field name="chat" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con Software Navegabilidad Simple-->
+      <field name="software" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con Material Navegabilidad Simple-->
+      <field name="material" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con MaterialAdicional Navegabilidad Simple-->
+      <field name="materialAdicional" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con Pizarron Navegabilidad Simple-->
+      <field name="pizarron" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con FAQ Navegabilidad Simple-->
+      <field name="faq" persistence-modifier="persistent">
+      </field>
+      
+<!-- relacion N to 1 Con Caledario Navegabilidad Simple-->
+      <field name="calendario" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con Novedad Navegabilidad Simple-->
+      <field name="novedad" persistence-modifier="persistent">
+      </field>
+      <!--/*CODIGO AGREGADO POR GRUPO CONDE-PEREYRA - TEMA: GRUPOS*/-->      
+<!-- relacion 1 to 1 Con ListadoTemas Navegabilidad Simple-->
+      <field name="listadoTemas" persistence-modifier="persistent">
+      </field>
+      
+<!-- relacion 1 to 1 Con ConfiguracionGrupo Navegabilidad Simple-->
+      <field name="configuracionGrupo" persistence-modifier="persistent">
+      </field>
+      
+<!-- relacion 1 to 1 Con ConfiguracionGrupo Navegabilidad Simple -->
+      <field name="configuracionGrupoBorrador" persistence-modifier="persistent">
+      </field>
+      
+<!-- relacion 1 to 1 Con ConfiguracionGrupo Navegabilidad Simple-->
+      <field name="configuracionGrupoTodos" persistence-modifier="persistent">
+      </field>
+      
+<!-- relacion 1 to 1 Con ConfiguracionGrupo Navegabilidad Simple -->
+      <field name="configuracionGrupoBorradorTodos" persistence-modifier="persistent">
+      </field>
+      
+      <!-- relacion 1 to N Con ArchivoCompartidoAula-->
+     <field name="materialAsociadoAlAula">
+        <collection element-type="ArchivoCompartidoAula">
+          <extension vendor-name="triactive" key="owner-field" value="aula" />
+        </collection>
+      </field>
+      
+      <field name="enviarMailsNotificacion"/>
+
+<!-- relacion  to 1 Con Persona Navegabilidad Simple-->
+      <field name="creadaPor" persistence-modifier="persistent">
+      </field>
+      
+<!--/*HASTA ACA*/-->
+
+<!-- relacion N to 1 Con TipoOrganizacion Navegabilidad Simple-->
+      <field name="tipoOrganizacion" persistence-modifier="persistent">
+      </field>
+
+	 <field name="itemAulaPermisos">
+        <collection element-type="ItemAulaPermiso">
+          <extension vendor-name="triactive" key="owner-field" value="aula" />
+        </collection>
+      </field>
+
+       <field name="idAulaSisinfo" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+     </field>
+
+     <field name="periodo" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+     </field>
+     <field name="codigoAulaSisinfo" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+     </field>
+
+
+    
+
+      
+    </class>
+    </package>
+</jdo>

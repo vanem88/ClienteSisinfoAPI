@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="AutoexamenFinalizado"
+           identity-type="datastore"
+		   persistence-capable-superclass="EvaluacionFinalizada">
+   
+	<field name="intentosRestantes"/>
+
+	<field name="notaFinal"/>
+	
+	<field name="intentosRealizados"/>
+
+    </class>
+    </package>
+</jdo>

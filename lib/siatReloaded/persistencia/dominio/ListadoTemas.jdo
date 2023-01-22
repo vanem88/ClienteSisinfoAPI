@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="ListadoTemas"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="temasExcluyentes"/>
+      <field name="observacion" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+	 <!-- relacion 1 to N Con Tema-->
+     <field name="temas">
+        <collection element-type="Tema">
+          <extension vendor-name="triactive" key="owner-field" value="listadoTemas" />
+        </collection>
+      </field>
+     </class>
+    </package>
+</jdo>

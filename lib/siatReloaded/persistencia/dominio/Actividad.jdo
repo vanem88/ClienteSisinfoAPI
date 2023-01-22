@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Actividad"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="descripcion" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+       <!--/*CODIGO AGREGADO POR GRUPO CONDE-PEREYRA - TEMA: GRUPOS*/-->  
+       <field name="paraQuien">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="alcance">
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+      <field name="modoRespuesta">
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+  <!-- relacion 1 to N Con ActividadGrupal-->
+     <field name="actividadesGrupales">
+        <collection element-type="ActividadGrupal">
+          <extension vendor-name="triactive" key="owner-field" value="actividad" />
+        </collection>
+      </field>
+      <!--/*HASTA ACA*/-->  
+     
+<!-- relacion 1 to N Con Nota-->
+     <field name="notas">
+        <collection element-type="Nota">
+          <extension vendor-name="triactive" key="owner-field" value="actividad" />
+        </collection>
+      </field>
+
+<!-- relacion N to 1 Con Aula-->
+      <field name="aula" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="actividades"/>
+      </field>
+
+<!-- relacion N to 1 Con TipoCalificacion con Navegabilidad simple-->
+      <field name="tipoCalificacion" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con Texto con Navegabilidad simple-->
+      <field name="eventoFinalizacion" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con TipoActividad con Navegabilidad simple -->
+      <field name="tipoActividad" persistence-modifier="persistent">
+      </field>                                                  
+
+<!-- Modificado por MLucero -->
+    <field name="borrador"/>
+	<!-- relacion 1 to N Con Archivo-->
+    <field name="archivosAdjuntos">
+        <collection element-type="Archivo">
+        </collection>
+    </field>
+    <field name="detalles" >
+        <extension vendor-name="triactive" key="length" value="max 2000"/>
+    </field>  
+      
+    <!-- relacion 1 to 1 Con ValorCalificacion con Navegabilidad simple-->
+    <field name="notaAprobar" persistence-modifier="persistent">
+    </field>
+        
+    <!-- relacion 1 to 1 Con Persona con Navegabilidad simple-->    
+    <field name="persona" persistence-modifier="persistent">
+    </field>
+    <field name="generarEvento"/>    
+<!-- Fin de Modificado por MLucero -->
+	<field name="publicacion" persistence-modifier="persistent">
+      </field> 
+<!-- Fin de Modificado por MLucero -->
+ 	<field name="duplicado" />
+    </class>
+    </package>
+</jdo>

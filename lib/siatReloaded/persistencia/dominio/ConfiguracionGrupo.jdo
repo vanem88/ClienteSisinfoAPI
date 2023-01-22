@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="ConfiguracionGrupo"
+           identity-type="datastore">
+
+      <field name="id"/>
+
+      <field name="configuracionGralHerramientas"/>
+
+      <field name="configuracionGralAtributoCupo"/>
+
+      <field name="configuracionGralAtributoMultigrupo"/>
+
+      <field name="configuracionGralAtributoProhibido"/>
+
+      <field name="configuracionGralAtributoRechazado"/>
+
+      <field name="configuracionGralAtributoCurioso"/>
+
+      <field name="configuracionGralAtributoTipo"/>
+      
+      <field name="atributoGralCurioso" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+      
+      <field name="atributoGralRechazado" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+      
+      <field name="atributoGralProhibido" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+      
+      <field name="atributoGralTipo" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+
+	  <field name="atributoGralCupo">
+      </field>
+      
+      <field name="atributoGralMultigrupo">
+      </field>
+      
+       <field name="observacion" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+      
+     
+     </class>
+    </package>
+</jdo>

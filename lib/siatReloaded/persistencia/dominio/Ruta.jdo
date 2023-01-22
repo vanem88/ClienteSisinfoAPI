@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Ruta"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="nombre" >
+            <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="descripcion" >
+            <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <!-- relacion N to 1 Con Aula-->
+      <field name="aula" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="rutas"/>
+      </field>
+      <!-- relacion 1 to N Con ParticipanteRuta-->
+     <field name="participantes">
+        <collection element-type="ParticipanteRuta">
+          <extension vendor-name="triactive" key="owner-field" value="ruta" />
+        </collection>
+      </field>
+      <!-- relacion 1 to N Con Clase-->
+     <field name="clases">
+        <collection element-type="Clase">
+          <extension vendor-name="triactive" key="owner-field" value="ruta" />
+        </collection>
+      </field>
+      <!-- relacion N to 1 Con Archivo navegabilidad Simple-->
+      <field name="archivo" persistence-modifier="persistent">
+      </field>
+      <field name="borrador" />
+      <field name="cantidadClases"/>
+      <field name="fecha"/>
+    </class>
+    </package>
+</jdo>

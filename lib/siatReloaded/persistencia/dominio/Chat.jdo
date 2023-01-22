@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Chat"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="nombre" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+
+<!-- relacion 1 to N Con SesionChat-->
+     <field name="sesionChats">
+        <collection element-type="SesionChat">
+          <extension vendor-name="triactive" key="owner-field" value="chat" />
+        </collection>
+      </field>
+
+<!-- relacion 1 to N Con Mensaje-->
+     <field name="mensajes">
+        <collection element-type="Mensaje">
+          <extension vendor-name="triactive" key="owner-field" value="chat" />
+        </collection>
+      </field>
+
+    </class>
+    </package>
+</jdo>

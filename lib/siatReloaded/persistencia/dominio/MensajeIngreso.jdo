@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="MensajeIngreso"
+           identity-type="datastore">
+      <field name="id"/>
+      
+      <field name="titulo" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      
+      <field name="tipoMensaje" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      
+      <field name="asociado_al_mensaje" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      
+      
+      <field name="fechaInicio"/>
+      
+      <field name="fechaFin"/>
+      
+      <field name="fechaEvento"/>
+      
+      <field name="contenido" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+
+<!-- relacion N to 1 Con Persona Navegavilidad Simple-->
+      <field name="autor" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con Archivo navegabilidad Simple-->
+      <field name="archivo" persistence-modifier="persistent">
+      </field>
+      
+<!-- relacion N to 1 Con Aula navegabilidad Simple-->
+      <field name="aula" persistence-modifier="persistent">
+      </field>
+      
+<!-- relacion N to 1 Con Aula navegabilidad Simple-->
+      <field name="nivelAula" persistence-modifier="persistent">
+      </field>
+
+      <!-- relacion 1 to N Con PersonaMensajeIngreso-->
+     <field name="personasMensajeIngreso">
+        <collection element-type="PersonaMensajeIngreso">
+          <extension vendor-name="triactive" key="owner-field" value="mensaje" />
+        </collection>
+      </field>
+      
+ 
+
+    </class>
+    </package>
+</jdo>

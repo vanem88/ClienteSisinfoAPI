@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="ParticipanteEvaluacionClase"
+           identity-type="datastore">
+      <field name="id"/>
+
+<!-- relacion N to 1 Con Participante-->
+      <field name="participante" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con EvaluacionClase-->
+      <field name="evaluacionClase" persistence-modifier="persistent">
+      </field>
+
+      <field name="realizado" />
+
+    </class>
+    </package>
+</jdo>

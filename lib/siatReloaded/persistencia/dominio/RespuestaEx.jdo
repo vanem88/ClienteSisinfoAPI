@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="RespuestaEx"
+           identity-type="datastore">
+
+    <field name="id"/>
+
+<!-- relacion 1 to 1 Con Pregunta-->
+      <field name="preg" persistence-modifier="persistent">
+      </field>
+    
+    <field name="tipoPreg">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>  
+
+    <field name="respuesta">
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>  
+	
+<!-- relacion 1 a N con Preguntas navegabilidad simple-->
+	<field name="conjRespuesta">
+		<collection element-type="Frase">
+		</collection>		
+	</field>
+	
+    <field name="justificacion">
+         <extension vendor-name="triactive" key="length" value="max 1000"/>
+    </field>  
+	<field name="nota"/>
+	<field name="notaAutomatica"/>
+	<field name="orden"/>
+	<field name="fecha"/>
+	
+	<field name="evaluacionFinalizadaConRespuestas" persistence-modifier="persistent">
+            <extension vendor-name="triactive" key="collection-field" value="respuestas"/>   
+      </field>
+	</class>
+    </package>
+</jdo>

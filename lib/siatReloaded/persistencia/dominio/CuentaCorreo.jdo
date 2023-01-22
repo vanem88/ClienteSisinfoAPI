@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="CuentaCorreo"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="cuenta" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="clave" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+
+<!-- relacion 1 to N Con CuentaListaCorreo-->
+     <field name="cuentaListaCorreos">
+        <collection element-type="CuentaListaCorreo">
+          <extension vendor-name="triactive" key="owner-field" value="cuentaCorreo" />
+        </collection>
+      </field>
+
+<!-- relacion 1 to N Con Mail-->
+     <field name="mails">
+        <collection element-type="Mail">
+          <extension vendor-name="triactive" key="owner-field" value="cuentaCorreo" />
+        </collection>
+      </field>
+
+<!-- relacion 1 to N Con CuentasHasta-->
+     <field name="cuentasHastas">
+        <collection element-type="CuentasHasta">
+          <extension vendor-name="triactive" key="owner-field" value="cuentaCorreo" />
+        </collection>
+      </field>
+
+
+<!-- relacion N to 1 Con Persona Navegabilidad Simple-->
+      <field name="persona" persistence-modifier="persistent">
+      </field>
+
+    </class>
+    </package>
+</jdo>

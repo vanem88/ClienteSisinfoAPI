@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="MaterialAdicional"
+           identity-type="datastore"
+           persistence-capable-superclass="Carpeta">
+
+    </class>
+    </package>
+</jdo>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="TipoUsuarioAula"
+           identity-type="datastore">
+      <field name="id"/>
+<!-- relacion N to 1 Con TipoUsuario-->
+      <field name="tipoUsuario" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="tipoUsuarioAula"/>
+      </field>
+<!-- relacion N to 1 Con TipoAula-->
+      <field name="tipoAula" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="tipoUsuarioAula"/>
+      </field>
+
+    </class>
+    </package>
+</jdo>

@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="AulaCompuesta"
+           identity-type="datastore"
+	     persistence-capable-superclass="Aula">
+
+      <field name="codigo" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+      <field name="modalidad" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+      <field name="pathLogo" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="textoPromocion" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+      <field name="tipoAcceso" >
+          <extension vendor-name="triactive" key="length" value="max 30"/>
+      </field>
+      <field name="esOferta" >
+      </field>      
+      <field name="informacion" >
+          <extension vendor-name="triactive" key="length" value="max 20000"/>
+      </field>
+
+<!-- relacion N to 1 Con InscripcionOnLine Con Navegabilidad Simple-->
+      <field name="inscripcionOnline" persistence-modifier="persistent">
+      </field>
+<!-- relacion N to 1 Con Area Con Navegabilidad Simple-->
+      <field name="area" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con EstadoAula Con Navegabilidad Simple-->
+      <field name="estadoAula" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con Programa Con Navegabilidad Simple-->
+      <field name="programa" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion 1 to N Con Aula-->
+     <field name="aulas">
+        <collection element-type="Aula">
+          <extension vendor-name="triactive" key="owner-field" value="aulaCompuesta" />
+        </collection>
+      </field>
+
+<!-- relacion 1 to N Con ValorSeccion-->
+     <field name="valorSecciones">
+        <collection element-type="ValorSeccion">
+          <extension vendor-name="triactive" key="owner-field" value="aulaCompuesta" />
+        </collection>
+      </field>
+
+<!-- relacion 1 to N Con Horario-->
+     <field name="horarios">
+        <collection element-type="Horario">
+          <extension vendor-name="triactive" key="owner-field" value="aulaCompuesta" />
+        </collection>
+      </field>
+     <field name="fechaModifInformacion" />
+     
+    <field name="informacionPublica" /> 
+	<field name="cantNoticiasMostrar" />
+  	<field name="cantMensajesMostrar" />
+    <field name="cantDiasAlertaActividad" />
+    <field name="cantDiasAlertaCalendario" />
+  	<field name="cantDiasAlertaEvaluacion" />
+  	<field name="cantDiasAlertaIniForo" />
+    <field name="cantDiasAlertaFinForo" />
+  
+  	<field name="fechaInicioUso" />
+    <field name="fechaPasoHistorial" />
+    <field name="mostrarMiniCalendario" />
+    <field name="inscripcionComisiones" />
+    <field name="inscripcionUnicaComision" />
+
+    <field name="plantillaPermiso" persistence-modifier="persistent">
+    </field>
+    <field name="versionSiat" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+    </field>
+      
+    <field name="infoDuplicado" />
+    <field name="infoBorrador" />   
+
+    
+   
+    </class>
+    </package>
+</jdo>

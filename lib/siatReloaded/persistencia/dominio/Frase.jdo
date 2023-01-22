@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Frase"
+           identity-type="datastore">
+    <field name="id"/>
+
+	<field name="orden"/>
+	
+	<field name="texto"> 
+		<extension vendor-name="triactive" key="length" value="max 255"/>
+	</field>	
+    <!-- relacion 1 a 1 con archivo navegabilidad simple-->
+    <field name="adjunto" persistence-modifier="persistent">
+    </field>
+    </class>
+    </package>
+</jdo>

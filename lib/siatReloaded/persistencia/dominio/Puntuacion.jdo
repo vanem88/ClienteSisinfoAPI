@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Puntuacion"
+           identity-type="datastore">
+
+      <field name="id"/>
+      <field name="valor"/>
+      <field name="orden"/>
+      <field name="obligatoria"/>      
+	  <field name="idEx_Autoex"/>
+	  <field name="categoria" persistence-modifier="persistent"></field>
+    </class>
+    </package>
+</jdo>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="SeguimientoAlmacenamientoMaterial"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="responsable" persistence-modifier="persistent">
+      </field>
+<!-- relacion N to 1 Con Persona  Navegabilidad Simple-->
+      <field name="persona" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con Aula  Navegabilidad Simple -->
+      <field name="aula" persistence-modifier="persistent">
+      </field>
+
+      <field name="fecha"/>
+      <field name="almacenamientoPersonal"/>
+      <field name="limiteNuevo"/>
+  	  <field name="limiteAnterior"/>
+  	  
+  	  <field name="nivel" >
+          <extension vendor-name="triactive" key="length" value="max 15"/>
+      </field>
+      <field name="ultimoCambio"/>
+      <field name="solicitud"/>
+    </class>
+    </package>
+</jdo>

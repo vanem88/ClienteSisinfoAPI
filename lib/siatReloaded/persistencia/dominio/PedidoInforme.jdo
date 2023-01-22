@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="PedidoInforme"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="fecha"/>
+      <field name="nombre" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="pendiente" >
+          <extension vendor-name="triactive" key="length" value="max 30"/>
+      </field>
+      <field name="fechaDesde"/>
+      <field name="fechaHasta"/>
+
+      <field name="pathArchivoSalida" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+
+<!-- relacion N to 1 Con Persona Navegabilidad Simple-->
+      <field name="persona" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con Aula Navegabilidad Simple-->
+      <field name="aula" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion 1 to N Con InformePedidoInforme-->
+     <field name="informePedidoInformes">
+        <collection element-type="InformePedidoInforme">
+          <extension vendor-name="triactive" key="owner-field" value="pedidoInforme" />
+        </collection>
+      </field>
+
+
+    </class>
+    </package>
+</jdo>

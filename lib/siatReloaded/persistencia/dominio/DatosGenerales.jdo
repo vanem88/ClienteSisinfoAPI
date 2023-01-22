@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="DatosGenerales"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="nombreSistema">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+	  <field name="siglaSistema">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="versionSistema">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="nombreInstitucion">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+	  <field name="siglaInstitucion">
+          <extension vendor-name="triactive" key="length" value="max 25"/>
+      </field>
+	  <field name="direccionPostal">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+	  <field name="ubicacionOficina">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field> 
+	  <field name="horarioAtencion">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+	  <field name="telefonoOficina">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+	  <field name="saludoMailGenerico">
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+	
+	  <field name="habilitarMensajeriaInterna"/>
+      <field name="notificarPorMail" />
+      <field name="notificarPorMensajeInterno" />
+      <field name="primerAnioHistorial" />
+      <field name="maxConeccionesMysql" />
+      <field name="minutosMaxInactiveInterval" />
+      
+      <field name="accesosSimultaneosEstudiantesEvaluacion" />
+      <field name="accesosSimultaneosGrabacionesVideoconferencias" /> 
+      
+      <field name="claveCorreo">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+	<field name="usuarioCorreo">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+	<field name="hostCorreo">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+	<field name="port">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+	<field name="cantidadCorreosPorMail" />
+	<field name="versionCkeditor">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="versionTomcat">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="versionMysql">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+	<field name="limiteArchivosPersonal">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+	<field name="limiteArchivosAula">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+	<field name="limiteArchivosComision">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+	<field name="mailContacto">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+	<field name="mailAlmacenamiento">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+	<field name="mailCreacionAulas">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      
+      <field name="habilitarPdfExamenfinalizado" />
+      <field name="habilitarAlertas" />
+      
+      <field name="servidorVideoconferencias">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      
+	
+    </class>
+    </package>
+</jdo>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="RespuestaPreguntaSiat"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="detalle" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+<!-- relacion N to 1 Con PreguntaSiat Navegabilidad Simple-->
+      <field name="preguntaSiat" persistence-modifier="persistent">
+      </field>      
+<!-- relacion N to 1 Con ValorCalificacion con Navegabilidad simple-->
+      <field name="valorCalificacion" persistence-modifier="persistent">
+      </field>
+<!-- relacion N to 1 Con EncuestaSiatPersona-->
+      <field name="encuestaSiatPersona" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="respuestas"/>
+      </field>
+    </class>
+    </package>
+</jdo>

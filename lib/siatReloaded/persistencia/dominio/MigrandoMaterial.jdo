@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="MigrandoMaterial"
+           identity-type="datastore"
+	     persistence-capable-superclass="RecursoMigracion">          
+
+       <field name="materialesPrincipales"/>
+       <field name="materialesSoftwares"/>
+       <field name="materialesEnlaces"/>
+       <field name="materialesBibliografia"/>
+       <field name="materialesAdicional"/>
+       
+       <field name="fechaCreacionMateriales"/>
+
+    </class>
+    </package>
+</jdo>

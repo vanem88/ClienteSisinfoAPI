@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Mensaje"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="contenido" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+      <field name="titulo" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+      <field name="fecha" />
+
+<!-- relacion N to 1 Con Foro-->
+      <field name="foro" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="mensajes"/>
+      </field>
+
+<!-- relacion N to 1 Con Chat-->
+      <field name="chat" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="mensajes"/>
+      </field>
+
+<!-- relacion N to 1 Con Persona Navegabilidad Simple-->
+      <field name="persona" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con Archivo Navegabilidad Simple-->
+      <field name="archivo" persistence-modifier="persistent">
+      </field>
+
+<!--Nuevo FORO-->
+
+<!-- relacion 1 to N Con Mensaje - relacion hijos-padre -->
+     <field name="msjHijos">
+        <collection element-type="Mensaje">
+          <extension vendor-name="triactive" key="owner-field" value="msjPadre" />
+        </collection>
+      </field>
+
+<!-- relacion N to 1 Con Mensaje  - relacion padre-hijos -->
+      <field name="msjPadre" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="msjHijos"/>
+      </field>
+      
+	<field name="valoracion" />
+	<field name="eliminado" />
+<!--Fin Nuevo FORO-->
+
+<!-- relacion 1 to N Con Mensaje - relacion hijos-padre -->
+    <field name="destinatarios">
+        <collection element-type="Destinatario">
+          <extension vendor-name="triactive" key="owner-field" value="mensaje" />
+        </collection>
+    </field>
+      
+	<field name="adjuntos">
+		<collection element-type="Archivo">
+		</collection>		
+	</field>  
+	
+    <field name="borrado" />
+     <field name="tipoMensaje" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      
+       <field name="para" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+      
+       <field name="conCopia" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+      
+       <field name="conCopiaOculta" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+      
+       <field name="nombreAdjuntos" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+    </class>
+    </package>
+</jdo>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="CuentasHasta"
+           identity-type="datastore">
+      <field name="id"/>
+
+<!-- relacion N to 1 Con CuentaCorreo-->
+      <field name="cuentaCorreo" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="cuentasHastas"/>
+      </field>
+
+<!-- relacion N to 1 Con Mail-->
+      <field name="mail" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="cuentasHastas"/>
+      </field>
+
+    </class>
+    </package>
+</jdo>

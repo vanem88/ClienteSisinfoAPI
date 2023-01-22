@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Curso"
+           identity-type="datastore"
+	     persistence-capable-superclass="AulaCompuesta">
+
+      <field name="fechaInicio"/>
+      <field name="fechaFin"/>
+	  <field name="tradicional" />
+<!-- relacion N to 1 Con TipoCalificacion Navegabilidad Simple-->
+      <field name="tipoCalificacion" persistence-modifier="persistent">
+      </field>
+      
+      <!-- relacion N to 1 Con TipoLicenciaMaterial Navegabilidad Simple-->
+      <field name="tipoLicenciaMaterial" persistence-modifier="persistent">
+      </field>
+	  <field name="anioPlanEstudio"/>
+	   <field name="carpetaSistArchivos" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      
+    </class>
+    </package>
+</jdo>

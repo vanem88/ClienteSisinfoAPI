@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="ValorCalificacion"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="nombre" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+      <field name="orden" >
+      </field>
+
+<!-- relacion N to 1 Con TipoCalificacion-->
+      <field name="tipoCalificacion" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="valorCalificaciones"/>
+      </field>
+<!-- relacion N to 1 Con TipoCalificacionEncuestas-->
+  <field name="tipoCalificacionEncuestas" persistence-modifier="persistent">
+      <extension vendor-name="triactive" key="collection-field" value="valorCalificaciones"/>
+  </field>
+
+
+
+
+    </class>
+    </package>
+</jdo>

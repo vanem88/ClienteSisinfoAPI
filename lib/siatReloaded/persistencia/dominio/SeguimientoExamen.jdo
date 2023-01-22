@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="SeguimientoExamen" identity-type="datastore">
+      <field name="id"/>
+
+<!-- relacion N to 1 Con Persona-->
+      <field name="persona" persistence-modifier="persistent">
+      </field>
+      
+      <field name="esDocente"/>
+
+<!-- relacion N to 1 Con ExamenFinalizado-->
+      <field name="examenFinalizado" persistence-modifier="persistent">
+      </field>
+
+	  <field name="fecha"/>
+      <field name="descripcion" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+
+
+    </class>
+    </package>
+</jdo>

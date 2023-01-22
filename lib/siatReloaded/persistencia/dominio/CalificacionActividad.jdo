@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="CalificacionActividad"
+           identity-type="datastore">
+      <field name="id"/>
+      
+      <!-- relacion N to 1 Con EstadoCalificacion Navegabilidad Simple-->
+      <field name="estadoCalificacion" persistence-modifier="persistent">
+      </field>
+      
+      <field name="fechaCalificacion"/>
+
+      <field name="autorCalificacion" persistence-modifier="persistent">
+      </field>
+       
+      <field name="nota" >
+          <extension vendor-name="triactive" key="length" value="max 50"/>
+      </field>
+      
+      <!-- relacion N to 1 Con ValorCalificacion Navegabilidad Simple-->
+      <field name="valorCalificacion" persistence-modifier="persistent">
+      </field>
+     
+      <field name="fechaDevolucion"/>
+
+      <field name="autorDevolucion" persistence-modifier="persistent">
+      </field>
+
+	  <!-- relacion N to 1 Con Archivo (de devolucion)navegabilidad Simple-->
+      <field name="archivoDevolucion" persistence-modifier="persistent">
+      </field>
+      
+      <field name="devolucionTexto" >
+          <extension vendor-name="triactive" key="length" value="max 2000"/>
+      </field>
+      
+      <field name="califAudios">
+        <collection element-type="Audio">
+          <extension vendor-name="triactive" key="owner-field" value="calificacion_actividad" />
+        </collection>
+      </field>
+      
+    </class>
+    </package>
+</jdo>

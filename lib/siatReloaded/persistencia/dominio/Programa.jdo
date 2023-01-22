@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Programa"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="titulo" >
+          <extension vendor-name="triactive" key="length" value="max 200"/>
+      </field>
+      <field name="descripcionOnLine" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+
+      <field name="archivos">
+		<collection element-type="Archivo">
+		</collection>		
+	  </field> 
+	  
+    </class>
+    </package>
+</jdo>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="EventoRepeticion"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="tipoRepeticion" >
+          <extension vendor-name="triactive" key="length" value="max 20"/>
+      </field>
+      <field name="repiteCada"/>
+      <field name="fechaInicio"/>
+      
+      <field name="tipoFinalizacion" >
+          <extension vendor-name="triactive" key="length" value="max 20"/>
+      </field>
+      <field name="cantRepeticiones"/>
+      <field name="fechaLimite"/>
+     
+	 <field name="repDom"/>
+	 <field name="repLun"/>
+	 <field name="repMar"/>
+	 <field name="repMie"/>
+	 <field name="repJue"/>
+	 <field name="repVie"/>
+	 <field name="repSab"/> 	 	 	 
+     <field name="eventos">
+        <collection element-type="Texto">
+          <extension vendor-name="triactive" key="owner-field" value="eventoRepeticion" />
+        </collection>
+      </field>
+	  
+    </class>
+    </package>
+</jdo>

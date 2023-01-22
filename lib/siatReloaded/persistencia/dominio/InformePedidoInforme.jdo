@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="InformePedidoInforme"
+           identity-type="datastore">
+      <field name="id"/>
+
+<!-- relacion N to 1 Con Informe Navegabilidad Simple-->
+      <field name="informe" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con PedidoInforme -->
+      <field name="pedidoInforme" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="informePedidoInformes"/>
+      </field>
+
+    </class>
+    </package>
+</jdo>

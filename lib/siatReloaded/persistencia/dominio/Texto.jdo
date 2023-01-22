@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Texto"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="titulo" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="fecha"/>
+      <field name="fechaEvento"/>
+      <field name="fechaFinEvento"/>
+      <field name="eliminado"/>
+      <field name="contenido" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+
+<!-- relacion N to 1 Con Navegavilidad Simple-->
+      <field name="persona" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con Archivo navegabilidad Simple-->
+      <field name="archivo" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con Comunicacion-->
+      <field name="comunicacion" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="textos"/>
+      </field>
+<!--/*CODIGO AGREGADO POR GRUPO CONDE-PEREYRA - TEMA: GRUPOS*/-->
+<!-- relacion N to 1 Con Integracion-->
+      <field name="integracion" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="textos"/>
+      </field>
+      <!-- relacion N to 1 Con EstadoIntegracion Con Navegabilidad Simple-->
+      <field name="estado" persistence-modifier="persistent">
+      </field>
+<!--/*HASTA ACA*/-->
+
+      <field name="tipoEvento" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+	  <field name="generarAlerta"/>
+	  
+	  <!-- relacion N to 1 Con EventoRepeticion-->
+      <field name="eventoRepeticion" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="eventos"/>
+      </field>
+	  
+	  <field name="conComentarios" />
+	  <field name="comentarios">
+        <collection element-type="Comentario">
+          <extension vendor-name="triactive" key="owner-field" value="textoPadre" />
+        </collection>
+      </field>
+      <field name="publicacion" persistence-modifier="persistent">
+      </field> 
+<!-- Fin de Modificado por MLucero -->
+ 	<field name="duplicado" />
+    </class>
+    </package>
+</jdo>

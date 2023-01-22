@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Persona"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="apellido" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+      <field name="nombre" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+      <field name="tipoDoc" >
+          <extension vendor-name="triactive" key="length" value="max 20"/>
+      </field>
+      <field name="numeroDoc" >
+          <extension vendor-name="triactive" key="length" value="max 30"/>
+      </field>
+      <field name="sexo" >
+          <extension vendor-name="triactive" key="length" value="max 10"/>
+      </field>
+      <field name="fechaNacimiento"/>
+      <field name="calle" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+      <field name="desarrollador">
+      </field>
+      <field name="alturaCalle" >
+          <extension vendor-name="triactive" key="length" value="max 50"/>
+      </field>
+      <field name="telefono" >
+          <extension vendor-name="triactive" key="length" value="max 50"/>
+      </field>
+      <field name="email" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+      <field name="pathFoto" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+
+      <field name="login" >
+          <extension vendor-name="triactive" key="length" value="max 30"/>
+      </field>
+      <field name="password" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+
+      <field name="nacionalidad" >
+          <extension vendor-name="triactive" key="length" value="max 50"/>
+      </field>
+       <field name="recibeInfoMail" >
+          <extension vendor-name="triactive" key="length" value="max 1"/>
+      </field>
+       <field name="recibeInfoCelular" >
+          <extension vendor-name="triactive" key="length" value="max 1"/>
+      </field>
+       <field name="comparteInfo" >
+          <extension vendor-name="triactive" key="length" value="max 1"/>
+      </field>
+
+      <field name="fechaIngreso"/>
+      <field name="fechaCambioClave"/>
+      <field name="empresaCelular" >
+          <extension vendor-name="triactive" key="length" value="max 50"/>
+      </field>
+      <field name="caracteristicaCelular" >
+          <extension vendor-name="triactive" key="length" value="max 50"/>
+      </field>
+
+      <field name="numeroCelular" >
+          <extension vendor-name="triactive" key="length" value="max 50"/>
+      </field>
+
+
+
+<!-- relacion 1 to N Con DescargaMaterial-->
+     <field name="descargaMateriales">
+        <collection element-type="DescargaMaterial">
+          <extension vendor-name="triactive" key="owner-field" value="persona" />
+        </collection>
+      </field>
+      
+<!-- relacion 1 to N Con ConteoEnlaces-->
+     <field name="conteoEnlaces">
+        <collection element-type="ConteoEnlaces">
+          <extension vendor-name="triactive" key="owner-field" value="persona" />
+        </collection>
+      </field>
+  
+<!-- relacion 1 to N Con SeguimientoAcceso-->
+     <field name="seguimientoAccesos">
+        <collection element-type="SeguimientoAcceso">
+          <extension vendor-name="triactive" key="owner-field" value="persona" />
+        </collection>
+      </field>
+
+<!-- relacion 1 to N Con Participante-->
+     <field name="participantes">
+        <collection element-type="Participante">
+          <extension vendor-name="triactive" key="owner-field" value="persona" />
+        </collection>
+      </field>
+
+<!-- relacion 1 to N Con PersonaPermisoAcceso-->
+    <field name="personaPermisoAccesos">
+        <collection element-type="PersonaPermisoAcceso">
+          <extension vendor-name="triactive" key="owner-field" value="persona" />
+        </collection>
+      </field>
+
+<!-- relacion 1 to N Con PersonaAreaInteres-->
+     <field name="personaAreaIntereses">
+        <collection element-type="PersonaAreaInteres">
+          <extension vendor-name="triactive" key="owner-field" value="persona" />
+        </collection>
+      </field>
+
+<!-- relacion N to 1 Con Ciudad Con Navegabilidad simple-->
+      <field name="ciudad" persistence-modifier="persistent">
+      </field>
+
+ <!-- relacion 1 to N Con PersonaArchivoCompartida-->
+     <field name="archivosCompartidos">
+        <collection element-type="PersonaArchivoCompartida">
+          <extension vendor-name="triactive" key="owner-field" value="persona" />
+        </collection>
+      </field>
+      
+<!-- relacion 1 to N Con Archivo-->
+     <field name="archivosSubidosPorMi">
+        <collection element-type="Archivo">
+          <extension vendor-name="triactive" key="owner-field" value="autor" />
+        </collection>
+      </field>
+      
+      <!-- relacion N to 1 Con ConfiguracionPersonal de Navegabilidad simple-->
+      <field name="configuracionPersonal" persistence-modifier="persistent">
+      </field>
+
+      <field name="creadaDesde" >
+          <extension vendor-name="triactive" key="length" value="max 12"/>
+      </field>
+      <!-- relacion 1 to 1 Con  Navegabilidad Simple-->
+      <field name="dniEscaneado" persistence-modifier="persistent">
+      </field>
+    </class>
+    </package>
+</jdo>

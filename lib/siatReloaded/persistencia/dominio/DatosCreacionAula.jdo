@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="DatosCreacionAula"
+           identity-type="datastore">
+           
+       <field name="id"/>
+	   
+       <field name="modalidad" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+       </field>
+       <field name="tipoAccesoAlAula" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+       </field>
+       
+       <field name="usoListaCorreo"/>
+       <field name="mostrarEnOfertaEducativa"/>
+       <field name="inscripcionOnLine"/>
+       <field name="estiloVisual" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+       </field>
+       
+       <field name="plantillaPermisos" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+       </field>
+       
+       <!-- relacion  to 1 Con PlantillaPermiso -->
+      <field name="plantilla" persistence-modifier="persistent">
+      </field>
+      
+    </class>
+    </package>
+</jdo>

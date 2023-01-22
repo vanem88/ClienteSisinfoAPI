@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Integracion"
+           identity-type="datastore">
+      <field name="id"/>
+ <!-- relacion 1 to N Con Texto-->
+     <field name="textos">
+        <collection element-type="Texto">
+          <extension vendor-name="triactive" key="owner-field" value="integracion" />
+        </collection>
+      </field>
+    </class>
+    </package>
+</jdo>

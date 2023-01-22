@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="SeguimientoMail"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="categoria" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="pathMailEnviado" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="pathMailRecibido" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+
+
+<!-- relacion N to 1 Con CuentaCorreo Navegabilidad Simple-->
+      <field name="cuentaCorreo" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con Mail con rol ultimoMailRecibido Navegabilidad Simple-->
+      <field name="ultimoMailRecibido" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con Mail con rol ultimoMailEnviado Navegabilidad Simple-->
+      <field name="ultimoMailEnviado" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con Aula Navegabilidad Simple-->
+      <field name="aula" persistence-modifier="persistent">
+      </field>
+
+
+
+    </class>
+    </package>
+</jdo>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="LecturasForo"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="fechaHora"/>
+
+
+<!-- relacion N to 1 Con Participante  Navegabilidad Simple-->
+      <field name="participante" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con Foro Navegabilidad Simple-->
+      <field name="foro" persistence-modifier="persistent">
+      </field>
+
+
+    </class>
+    </package>
+</jdo>

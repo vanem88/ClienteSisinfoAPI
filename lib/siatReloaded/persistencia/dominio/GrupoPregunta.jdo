@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="GrupoPregunta"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="descripcion" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+
+<!-- relacion 1 to N Con Pregunta-->
+     <field name="preguntas">
+        <collection element-type="Pregunta">
+          <extension vendor-name="triactive" key="owner-field" value="grupoPregunta" />
+        </collection>
+      </field>
+
+<!-- relacion N to 1 Con Encuesta-->
+      <field name="encuesta" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="grupoPreguntas"/>
+      </field>
+
+    </class>
+    </package>
+</jdo>

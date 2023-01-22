@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="NotaAprobarActividad"
+           identity-type="datastore">
+
+    <field name="id"/>
+
+    <field name="tipoNota">
+         <extension vendor-name="triactive" key="length" value="max 255"/>
+    </field>
+      
+    <!-- relacion 1 to 1 Con Alumno-->
+    <field name="notaNumerica" persistence-modifier="persistent">
+    </field>
+      
+    <!-- relacion 1 a N con NotaAprobarActividad navegabilidad simple-->
+	<field name="notasCualitativas">
+		<collection element-type="ValorCalificacion">
+		</collection>		
+	</field>
+
+	</class>
+    </package>
+</jdo>

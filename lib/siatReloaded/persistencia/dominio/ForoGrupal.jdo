@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="ForoGrupal"
+           identity-type="datastore">
+      <field name="id"/>
+<!-- relacion N to 1 Con Foro-->
+      <field name="foro" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="forosGrupales"/>
+      </field>
+<!-- relacion N to 1 Con Grupo-->
+      <field name="grupo" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="forosGrupales"/>
+      </field>
+      
+      	<!-- relacion N to 1 Con Texto con Navegabilidad simple-->
+      <field name="eventoFinalizacion" persistence-modifier="persistent">
+      </field>
+    </class>
+    </package>
+</jdo>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/jdoYTjdo/jdo.jar"/>
+	<classpathentry kind="lib" path="lib/jdoYTjdo/jdo2.jar"/>
+	<classpathentry kind="lib" path="lib/jdoYTjdo/jdori.jar"/>
+	<classpathentry kind="lib" path="lib/jdoYTjdo/jdori-enhancer.jar"/>
+	<classpathentry kind="lib" path="lib/jdoYTjdo/log4j-1.2.8.jar"/>
+	<classpathentry kind="lib" path="lib/jdoYTjdo/tjdo.jar"/>
+	<classpathentry kind="lib" path="lib/jdoYTjdo/xml-apis.jar"/>
+	<classpathentry kind="lib" path="lib/mail/dsn.jar"/>
+	<classpathentry kind="lib" path="lib/mail/imap.jar"/>
+	<classpathentry kind="lib" path="lib/mail/javax.mail.jar"/>
+	<classpathentry kind="lib" path="lib/mail/mailapi.jar"/>
+	<classpathentry kind="lib" path="lib/mail/pop3.jar"/>
+	<classpathentry kind="lib" path="lib/mail/smtp.jar"/>
+	<classpathentry kind="lib" path="lib/activation.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/gson-2.8.6.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient-4.5.12.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-4.4.13.jar"/>
+	<classpathentry kind="lib" path="lib/javax.json-api-1.1.4.jar"/>
+	<classpathentry kind="lib" path="lib/json-org.jar"/>
+	<classpathentry kind="lib" path="lib/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/desarrolloVane/ClienteSisinfoAPI/lib/MySQL/mysql-connector-java-8.0.20.jar"/>
+	<classpathentry kind="lib" path="C:/desarrolloVane/proyectoJava2.0/SIAT/proyectoJava/libreriasExternas/AutenticacionSDKAdmin/com.google.firebase/commons-lang3-3.5.jar"/>
+	<classpathentry kind="lib" path="lib/siatReloaded.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

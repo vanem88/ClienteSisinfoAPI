@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="SolicitudAula"
+           identity-type="datastore">
+           
+      <field name="id"/>
+      
+<!--Controles--> 
+       <field name="aulaNueva"/>
+       <field name="fechaSolicitud"/>
+       <field name="fechaUltimaModificacion"/>
+       <field name="estadoSolicitud" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+       </field>
+       
+<!--Formulario - Atributos simples--> 
+	   <field name="facultad" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+       </field>
+       <field name="idFacultad"/>
+       <field name="asignatura" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+       </field>
+       <field name="codigoAsignatura" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+       </field>
+       <field name="periodoDesarrolloAsignatura" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+       </field>
+       
+       <field name="fechaInicioPeriodo"/>
+        
+       <field name="cantidadComisiones"/>
+       
+<!--Formulario - Asociaciones-->
+<!-- relacion 1 to N Con RecursoSolicitado-->
+	   <field name="recursosUtilizados">
+        <collection element-type="RecursoSolicitado">
+          <extension vendor-name="triactive" key="owner-field" value="solicitudAula" />
+        </collection>
+      </field>
+      
+<!-- relacion 1 to N Con SolicitudDocenteAula-->
+      <field name="equipoDocente">
+        <collection element-type="SolicitudDocenteAula">
+          <extension vendor-name="triactive" key="owner-field" value="solicitudAula" />
+        </collection>
+      </field>
+      
+<!-- relacion N to 1 Con Curso Navegabilidad Simple-->
+      <field name="cursoAClonar" persistence-modifier="persistent">
+      </field>
+      
+<!-- relacion N to 1 Con Curso Navegabilidad Simple-->
+      <field name="cursoResultante" persistence-modifier="persistent">
+      </field>
+      
+<!-- relacion N to 1 Con Persona Navegabilidad Simple-->
+      <field name="solicitante" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con DatosCreacionAula Navegabilidad Simple-->
+      <field name="datosCreacionAula" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con DocenteSolicitado-->
+      <field name="responsable" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="responsableDeSolicitudes"/>
+      </field>
+      
+<!-- relacion 1 to N Con ComisionSolicitud-->
+      <field name="comisiones">
+        <collection element-type="ComisionSolicitud">
+          <extension vendor-name="triactive" key="owner-field" value="solicitudAula" />
+        </collection>
+      </field>
+            
+      <field name="clonarInfoComisiones">
+        <collection element-type="ClonarInfoComision">
+          <extension vendor-name="triactive" key="owner-field" value="solicitudAula" />
+        </collection>
+      </field>
+      
+      
+      <field name="inscripcionOnLine" >
+          <extension vendor-name="triactive" key="length" value="max 45"/>
+       </field>
+       
+       <field name="codigoInscripcionOnLine" >
+          <extension vendor-name="triactive" key="length" value="max 45"/>
+       </field>
+        <field name="tradicional" />
+       <!-- relacion N to 1 Con TipoLicenciaMaterial Navegabilidad Simple-->
+      <field name="tipoLicenciaMaterial" persistence-modifier="persistent">
+      </field>
+	  <field name="anioPlanEstudio"/>
+    </class>
+    </package>
+</jdo>

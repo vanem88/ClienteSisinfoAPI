@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="ValorSeccion"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="valor" >
+          <extension vendor-name="triactive" key="length" value="max 2000"/>
+      </field>
+
+<!-- relacion N to 1 Con AulaCompuesta-->
+      <field name="aulaCompuesta" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="valorSecciones"/>
+      </field>
+
+<!-- relacion N to 1 Con TipoSeccion Navegabilidad Simple-->
+      <field name="tipoSeccion" persistence-modifier="persistent">
+      </field>
+
+
+    </class>
+    </package>
+</jdo>

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="DocenteSolicitado"
+           identity-type="datastore">
+           
+      <field name="id"/>
+      
+       <field name="apellido" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+       </field>
+       
+        <field name="nombre" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+       </field>
+       
+        <field name="tipoDoc" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+       </field>
+       
+        <field name="numeroDoc" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+       </field>
+       
+        <field name="email" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+       </field>
+       
+      <field name="emailSIAT" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+       </field>       
+       
+       <field name="quiereEmailSiat"/>
+       
+        <field name="interno" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+       </field>
+       
+<!-- relacion 1 to N Con SolicitudDocenteAula-->
+	   <field name="solicitudes">
+        <collection element-type="SolicitudDocenteAula">
+          <extension vendor-name="triactive" key="owner-field" value="docenteSolicitado" />
+        </collection>
+      </field>
+      
+<!-- relacion 1 to N Con SolicitudAula-->
+      <field name="responsableDeSolicitudes">
+        <collection element-type="SolicitudAula">
+          <extension vendor-name="triactive" key="owner-field" value="responsable" />
+        </collection>
+      </field>
+      
+      <!-- relacion N to 1 Con Persona Navegabilidad Simple-->
+      <field name="docenteRegistrado" persistence-modifier="persistent">
+      </field>
+      
+    </class>
+    </package>
+</jdo>

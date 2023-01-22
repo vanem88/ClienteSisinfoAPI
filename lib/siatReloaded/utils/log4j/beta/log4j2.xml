@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+  <Appenders>
+    
+    <Console name="appenderCONSOLA" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{dd MMM yyyy - HH:mm:ss} %-5p  [%t] %C{2} (%F:%L) - %m%n"/>
+    </Console>
+    
+    <RollingFile name="RollingFile" fileName="logs/siat.log" 
+                 filePattern="logs/$${date:yyyy-MM}/siatlog-%d{yyyy-MM-dd-HH}-%i.log.gz">
+      <PatternLayout Pattern="%d{dd MMM yyyy - HH:mm:ss} - [%t] %C{2} (%F:%L) - %p %c{1}  %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy interval="6" modulate="true"/>
+        <SizeBasedTriggeringPolicy size="130 MB"/>
+      </Policies>
+    </RollingFile>
+    
+  </Appenders>
+  <Loggers>
+    
+     <Logger name="server" level="trace">
+      <AppenderRef ref="appenderCONSOLA"/>
+    </Logger>
+    <Root level="trace">
+      <AppenderRef ref="RollingFile"/>
+    </Root>
+  </Loggers>
+</Configuration>

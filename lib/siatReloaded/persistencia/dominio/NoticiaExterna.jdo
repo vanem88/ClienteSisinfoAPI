@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="NoticiaExterna" identity-type="datastore">
+      <field name="id"/>
+      <field name="fechaDesde" />
+      <field name="fechaHasta" />
+      
+      
+      <field name="tituloPpal" >
+          <extension vendor-name="triactive" key="length" value="max 60"/>
+      </field>
+      
+      <!-- relacion N to 1 Con Archivo Navegabilidad Simple-->
+      <field name="archivo" persistence-modifier="persistent">
+      </field>
+      
+      <field name="tituloLeerMas" >
+          <extension vendor-name="triactive" key="length" value="max 70"/>
+      </field>
+	  <field name="contenidoLeerMas" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+      
+	  <field name="orden" />
+	  <field name="enlace"> 
+	             <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+    </class>
+    </package>
+</jdo>

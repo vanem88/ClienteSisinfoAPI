@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="ArchivoVersionado"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="cantidadDownloads" />
+      <field name="tiempoEstimado" >
+          <extension vendor-name="triactive" key="length" value="max 30"/>
+      </field>
+      <field name="nombre" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="fechaUp"/>
+      <field name="tamanio"/>
+      <field name="escaneadoOk"/>
+      <field name="compartido"/>
+      <field name="descripcion" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="nroVersion"/>
+      
+      <!-- relacion N to 1 Con Archivo -->      
+      <field name="archivo" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="archivosVersionados"/>
+      </field>
+
+      <!-- relacion N to 1 Con Persona //aca se va a perder la referencia de los archivos q subio la persona-->
+      <field name="autor" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" />
+      </field>
+
+    </class>
+    </package>
+</jdo>

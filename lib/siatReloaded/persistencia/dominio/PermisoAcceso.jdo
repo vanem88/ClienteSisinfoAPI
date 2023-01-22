@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="PermisoAcceso"
+           identity-type="datastore">
+      <field name="id"/>
+
+
+<!-- relacion N to 1 Con Aula-->
+      <field name="aula" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="permisoAccesos"/>
+      </field>
+
+<!-- relacion N to 1 Con TipoUsuario Navegabilidad Simple-->
+      <field name="tipoUsuario" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con TipoPermiso Navegabilidad Simple-->
+      <field name="tipoPermiso" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con Recurso Navegabilidad Simple-->
+      <field name="recurso" persistence-modifier="persistent">
+      </field>
+
+    </class>
+    </package>
+</jdo>

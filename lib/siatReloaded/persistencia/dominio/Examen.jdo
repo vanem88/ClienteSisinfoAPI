@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Examen"
+           identity-type="datastore"
+		   persistence-capable-superclass="Evaluacion">
+    	
+	<field name="duracion"/>
+	<field name="tpoAdvertencia"/>
+	<field name="nota"/> 
+	<field name="temporizado"/>    	
+  	<field name="verNotasDesde"/>
+  <!-- relacion 1 to N Con Horario-->
+     <field name="descargaExamenes">
+        <collection element-type="DescargaExamen">
+          <extension vendor-name="triactive" key="owner-field" value="examen" />
+        </collection>
+      </field>
+      
+    </class>
+    </package>
+</jdo>

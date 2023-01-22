@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="ListaContactos"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="nombre" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+     
+<!-- relacion N to 1 Con Persona Navegabilidad Simple-->
+      <field name="autor" persistence-modifier="persistent">
+      </field>
+
+	<field name="personas">
+		<collection element-type="Persona">
+		</collection>		
+	</field>  
+	
+    </class>
+    </package>
+</jdo>

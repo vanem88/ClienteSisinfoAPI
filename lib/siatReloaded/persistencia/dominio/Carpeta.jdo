@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Carpeta"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="fechaCreacion"/>
+      <field name="nombre" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+
+<!-- relacion 1 to N Con Archivo-->
+     <field name="archivos">
+        <collection element-type="Archivo">
+          <extension vendor-name="triactive" key="owner-field" value="carpeta" />
+        </collection>
+      </field>
+
+
+
+<!-- relacion 1 to N Con Carpeta - relacion hijos-padre -->
+     <field name="hijos">
+        <collection element-type="Carpeta">
+          <extension vendor-name="triactive" key="owner-field" value="padre" />
+        </collection>
+      </field>
+
+<!-- relacion N to 1 Con Carpeta  - relacion padre-hijos -->
+      <field name="padre" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="hijos"/>
+      </field>
+
+
+ 	<!-- relacion 1 to N Con ArchivoCompartidoAula-->
+     <field name="materialAsociadoAlAula">
+        <collection element-type="ArchivoCompartidoAula">
+          <extension vendor-name="triactive" key="owner-field" value="carpeta" />
+        </collection>
+      </field>
+      
+      <field name="nombreReal" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+	  <field name="publicacion" persistence-modifier="persistent">
+      </field> 
+    </class>
+    </package>
+</jdo>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="RecursoCategoriaUsuario"
+           identity-type="datastore">
+      <field name="id"/>
+
+
+
+<!-- relacion N to 1 Con Recurso Navegabilidad Simple-->
+      <field name="recurso" persistence-modifier="persistent">
+      </field>
+      
+<!-- relacion N to 1 Con CategoriaUsuario Navegabilidad Simple-->
+      <field name="categoriaUsuario" persistence-modifier="persistent">
+      </field>
+
+	  <field name="habilitado"/>
+    </class>
+    </package>
+</jdo>

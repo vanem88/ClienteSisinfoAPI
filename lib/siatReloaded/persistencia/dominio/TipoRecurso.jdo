@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="TipoRecurso"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="nombre" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      
+      <field name="orden"/>
+      <field name="descripcion" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="solicitudAulaNuevaClonada"/>
+      <field name="solicitudAulaPublica" >
+            <extension vendor-name="triactive" key="length" value="max 10"/>
+      </field>
+      
+      <field name="solicitudAulaEstandar"/>
+      <field name="recursosGrupo"/>
+      <field name="recursosAula"/>
+      <field name="recursosOrganizacion"/>
+      <field name="recursosCampus"/>
+      <field name="permisosGrupo"/>
+      <field name="permisosAula"/>
+      <field name="permisosOrganizacion"/>
+      <field name="permisosCampus"/>
+      <field name="creacionAulaSisinfo"/>
+
+
+    </class>
+    </package>
+</jdo>

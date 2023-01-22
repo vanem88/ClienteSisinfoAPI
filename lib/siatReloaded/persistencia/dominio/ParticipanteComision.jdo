@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="ParticipanteComision"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="fechaUltimoAcceso"/>
+      <field name="fechaAlta"/>
+
+<!-- relacion N to 1 Con Comision-->
+      <field name="comision" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="participanteComisiones"/>
+      </field>
+
+<!-- relacion N to 1 Con Participante-->
+      <field name="participante" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="participanteComisiones"/>
+      </field>
+<!--/*CODIGO AGREGADO POR GRUPO CONDE-PEREYRA - TEMA: GRUPOS*/-->
+<!-- relacion N to 1 Con TipoUsuario Navegabilidad Simple-->
+      <field name="tipoUsuario" persistence-modifier="persistent">
+      </field>
+      
+      <field name="observacionAutoinscripcion" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+<!--/*HASTA ACA*/-->
+
+     <!-- relacion N to 1 Con Persona Navegabilidad Simple -->
+      <field name="agregadoPor" persistence-modifier="persistent">
+      </field>
+      
+      <field name="agregadoDesde" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      
+    </class>
+    </package>
+</jdo>

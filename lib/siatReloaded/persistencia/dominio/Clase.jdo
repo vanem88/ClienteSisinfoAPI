@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Clase"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="nombre" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+
+      <field name="descripcion" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+
+      <field name="tipoAvance" />
+
+      <field name="mensaje" >
+        <extension vendor-name="triactive" key="length" value="max 2000"/>
+      </field>  
+
+      <!-- relacion 1 to N Con ActividadClase-->
+     <field name="actividades">
+        <collection element-type="ActividadClase">
+          <extension vendor-name="triactive" key="owner-field" value="clase" />
+        </collection>
+      </field>
+
+<!-- relacion N to 1 Con TipoAula Navegabilidad Simple-->
+      <field name="tipoAula" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion 1 to N Con ForoClase-->
+     <field name="foros">
+        <collection element-type="ForoClase">
+          <extension vendor-name="triactive" key="owner-field" value="clase" />
+        </collection>
+      </field>
+
+      <!-- relacion N to 1 Con Ruta-->
+      <field name="ruta" persistence-modifier="persistent">
+            <extension vendor-name="triactive" key="collection-field" value="clases"/>
+      </field>
+
+      <field name="borrador" />
+
+      <field name="nro" />
+
+      <!-- relacion 1 to N Con TextoClase-->
+      <field name="textos">
+            <collection element-type="TextoClase">
+                  <extension vendor-name="triactive" key="owner-field" value="clase" />
+            </collection>
+      </field>
+      
+      <!-- relacion 1 to N Con ArchivoClase-->
+      <field name="archivos">
+            <collection element-type="ArchivoClase">
+                  <extension vendor-name="triactive" key="owner-field" value="clase" />
+            </collection>
+      </field>
+      
+      <!-- relacion 1 to N Con EvaluacionClase-->
+      <field name="evaluaciones">
+            <collection element-type="EvaluacionClase">
+                  <extension vendor-name="triactive" key="owner-field" value="clase" />
+            </collection>
+      </field>
+      <!-- relacion N to 1 Con Persona Navegabilidad Simple-->
+      <field name="autor" persistence-modifier="persistent">
+      </field>
+
+      </class>
+    </package>
+</jdo>

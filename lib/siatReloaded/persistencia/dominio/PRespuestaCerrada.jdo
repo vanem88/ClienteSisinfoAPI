@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="PRespuestaCerrada"
+           identity-type="datastore"
+           persistence-capable-superclass="PreguntaEx">
+
+		<field name="pregunta">
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+        </field>
+
+        <field name="respuesta">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+        </field>
+
+    </class>
+    </package>
+</jdo>

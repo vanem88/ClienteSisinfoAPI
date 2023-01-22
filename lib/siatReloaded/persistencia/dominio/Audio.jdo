@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Audio"
+           identity-type="datastore">
+      <field name="id"/>
+  	  <field name="fecha"/>
+<!-- relacion N to 1 Con CalificaicionActividad-->
+      <field name="calificacion_actividad" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="califAudios"/>
+      </field>
+
+<!-- relacion 1 to 1 Con  Archivo-->
+      <field name="archivo" persistence-modifier="persistent">
+      </field>  
+       <field name="generadoPor" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>    
+    </class>
+    </package>
+</jdo>

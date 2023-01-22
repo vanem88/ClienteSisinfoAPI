@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="ListaCorreo"
+           identity-type="datastore"
+	     persistence-capable-superclass="CuentaCorreo">
+
+<!-- relacion N to 1 Con Aula Con Navegabilidad Simple-->
+      <field name="aula" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion 1 to N Con CuentaListaCorreo-->
+     <field name="cuentaListaCorreos">
+        <collection element-type="CuentaListaCorreo">
+          <extension vendor-name="triactive" key="owner-field" value="listaCorreo" />
+        </collection>
+      </field>
+
+
+    </class>
+    </package>
+</jdo>

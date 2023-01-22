@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="ExamenFinalizado"
+           identity-type="datastore"
+		   persistence-capable-superclass="EvaluacionFinalizadaConRespuestas">
+ 	
+	<field name="notaFinal"/>
+    <field name="corregido"/>	
+ 	<field name="reasignar"> 
+		<extension vendor-name="triactive" key="length" value="max 255"/>
+	</field>
+	<field name="fechaCalificado"/>	
+	<field name="tiempoRestante"/>
+	<field name="fechaProrrogaInicio"/>
+	<field name="fechaProrrogaFin"/>
+	
+	<field name="persona" persistence-modifier="persistent">
+    </field>
+      
+    <field name="primerIngreso"/>
+    <field name="ultimoIngreso"/>
+	<field name="tiempoRealizacion"/>
+	<field name="cantidadIngresos"/>
+	<field name="host"> 
+		<extension vendor-name="triactive" key="length" value="max 100"/>
+	</field>
+	<field name="guardadoDesde"> 
+		<extension vendor-name="triactive" key="length" value="max 255"/>
+	</field>
+	
+	  <!-- relacion 1 to N Con Horario-->
+     <field name="descargaExamenes">
+        <collection element-type="DescargaExamen">
+          <extension vendor-name="triactive" key="owner-field" value="examenFinalizado" />
+        </collection>
+      </field>
+      
+	</class>
+    </package>
+</jdo>

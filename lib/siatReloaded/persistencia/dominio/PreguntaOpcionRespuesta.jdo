@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="PreguntaOpcionRespuesta"
+           identity-type="datastore">
+      <field name="id"/>
+
+
+<!-- relacion N to 1 Con Pregunta-->
+      <field name="pregunta" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="preguntaOpcionRespuestas"/>
+      </field>
+
+<!-- relacion N to 1 Con OpcionRespuesta Navegabilidad Simple-->
+      <field name="opcionRespuesta" persistence-modifier="persistent">
+      </field>
+
+    </class>
+    </package>
+</jdo>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Comentario" identity-type="datastore">
+      <field name="id"/>
+
+	  <field name="fecha" />
+      <field name="contenido" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+      
+      <!-- relacion N to 1 Con Persona Navegabilidad Simple-->
+      <field name="persona" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con Archivo Navegabilidad Simple-->
+      <field name="archivo" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con Chat-->
+      <field name="textoPadre" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="comentarios"/>
+      </field>
+
+
+
+<!-- relacion 1 to N Con Mensaje - relacion hijos-padre -->
+     <field name="comentHijos">
+        <collection element-type="Comentario">
+          <extension vendor-name="triactive" key="owner-field" value="comentPadre" />
+        </collection>
+      </field>
+
+<!-- relacion N to 1 Con Mensaje  - relacion padre-hijos -->
+      <field name="comentPadre" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="comentHijos"/>
+      </field>
+    
+	<field name="eliminado" />
+    <field name="principal" />
+    </class>
+    </package>
+</jdo>

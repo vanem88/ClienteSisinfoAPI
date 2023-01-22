@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="EncuestaSiat"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="nombre" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+	  <field name="descripcion" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+	  <field name="estado" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+   	  <field name="periodo" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+<!-- relacion N to 1 Con TipoUsuario Navegabilidad Simple-->
+      <field name="paraQuien" persistence-modifier="persistent">
+      </field>
+<!-- relacion 1 to N Con PreguntaSiat-->
+     <field name="preguntas">
+        <collection element-type="PreguntaSiat">
+          <extension vendor-name="triactive" key="owner-field" value="encuestaSiat" />
+        </collection>
+      </field>
+      
+    </class>
+    </package>
+</jdo>

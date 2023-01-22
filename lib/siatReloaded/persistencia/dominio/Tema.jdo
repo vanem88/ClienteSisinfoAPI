@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Tema"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="nombre" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+     <!-- relacion 1 to N Con TemaTratadoGrupo-->
+     <field name="temasTratados">
+        <collection element-type="TemaTratadoGrupo">
+          <extension vendor-name="triactive" key="owner-field" value="tema" />
+        </collection>
+      </field>
+      <!-- relacion N to 1 Con ListadoTemas-->
+      <field name="listadoTemas" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="temas"/>
+      </field>
+    </class>
+    </package>
+</jdo>

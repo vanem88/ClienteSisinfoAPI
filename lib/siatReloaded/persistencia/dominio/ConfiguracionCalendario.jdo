@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="ConfiguracionCalendario" identity-type="datastore">
+  
+	<field name="id" />
+
+<!-- relacion 1 to N Con ConfiguracionPorAula-->
+    <field name="configuracionPorAula" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="confCalendarios"/>
+    </field>
+      
+<!-- relacion 1 to 1 Con Aula-->
+    <field name="aula" persistence-modifier="persistent">
+    </field>
+      
+	<field name="mostrar" />
+
+	<field name="color">
+		<extension vendor-name="triactive" key="length" value="max 10" />
+	</field>
+    
+    </class>
+    </package>
+</jdo>

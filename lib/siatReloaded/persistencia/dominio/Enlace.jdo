@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Enlace"
+           identity-type="datastore"
+	     persistence-capable-superclass="Link">
+	<!-- relacion N to 1 Con Carpeta-->
+      <field name="carpeta" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="enlaces"/>
+      </field>
+      
+<!-- relacion N to 1 Con Aula-->
+      <field name="aula" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="enlaces"/>
+      </field>
+      
+	<field name="publicacion" persistence-modifier="persistent">
+      </field> 
+    </class>
+    </package>
+</jdo>

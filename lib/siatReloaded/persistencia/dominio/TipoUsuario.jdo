@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="TipoUsuario"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="nombre" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="nombreSingular" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="nombrePlural" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+<!--/*CODIGO AGREGADO POR GRUPO CONDE-PEREYRA - TEMA: GRUPOS*/-->
+<!-- relacion 1 to N Con TipoUsuarioEnNivel-->
+     <field name="tipoUsuariosEnNivel">
+        <collection element-type="TipoUsuarioEnNivel">
+          <extension vendor-name="triactive" key="owner-field" value="tipoUsuario" />
+        </collection>
+      </field>
+<!--/*HASTA ACA*/-->
+	 <field name="habilitadoCampus"/>
+ 	 <field name="habilitadoCarrera"/>
+ 	 <field name="habilitadoAula"/>
+ 	 <field name="habilitadoComision"/>
+ 	 <field name="habilitadoGrupo"/>
+ 	 
+ 	 <!-- relacion N to 1 Con CategoriaUsuario-->
+      <field name="categoria" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="tipoUsuarios"/>
+      </field>
+      
+    </class>
+    </package>
+</jdo>

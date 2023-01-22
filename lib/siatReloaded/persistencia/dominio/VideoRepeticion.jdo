@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="VideoRepeticion" identity-type="datastore">
+      <field name="id"/>
+      <field name="tipoRepeticion" >
+          <extension vendor-name="triactive" key="length" value="max 20"/>
+      </field>
+
+      <field name="fechaInicio"/>
+      <field name="fechaLimite"/>
+     
+	 <field name="repDom"/>
+	 <field name="repLun"/>
+	 <field name="repMar"/>
+	 <field name="repMie"/>
+	 <field name="repJue"/>
+	 <field name="repVie"/>
+	 <field name="repSab"/> 	 	 	 
+
+     <field name="videoconfs">
+        <collection element-type="Videoconferencia">
+          <extension vendor-name="triactive" key="owner-field" value="videoRepeticion" />
+        </collection>
+      </field>
+	  
+    </class>
+    </package>
+</jdo>

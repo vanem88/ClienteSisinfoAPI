@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="AulaHerramienta"
+           identity-type="datastore">
+      <field name="id"/>
+
+<!-- relacion N to 1 Con Aula-->
+      <field name="aula" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="aulaTipoUsuarios"/>
+      </field>
+     
+<!-- relacion N to 1 Con TipoRecurso Navegabilidad Simple-->
+      <field name="tipoRecurso" persistence-modifier="persistent">
+      </field>
+
+
+    </class>
+    </package>
+</jdo>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+     
+    <class name="Link"
+           identity-type="datastore">
+ 
+          
+      <field name="id"/>
+      <field name="cantidadAccesos"/>
+      <field name="fechaUp"/>
+      <field name="link" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="nombre" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>     
+      <field name="descripcion" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+
+	<!-- relacion 1 to N Con ConteoEnlaces-->
+     <field name="conteoEnlaces">
+        <collection element-type="ConteoEnlaces">
+          <extension vendor-name="triactive" key="owner-field" value="link" />
+        </collection>
+      </field>
+   
+    </class>
+    </package>
+</jdo>

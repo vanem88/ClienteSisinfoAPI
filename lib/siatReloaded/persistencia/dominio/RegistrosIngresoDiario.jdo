@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="RegistrosIngresoDiario"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="fechaHoraEntrada"/>
+      <field name="idPersona"/>
+      <field name="host" >
+          <extension vendor-name="triactive" key="length" value="max 50"/>
+      </field>
+      <field name="nombreyApellidoPersona" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="tipoDeAcceso" >
+          <extension vendor-name="triactive" key="length" value="max 50"/>
+      </field>
+
+     
+
+    </class>
+    </package>
+</jdo>

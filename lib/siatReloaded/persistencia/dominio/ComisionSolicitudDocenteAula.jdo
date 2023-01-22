@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="ComisionSolicitudDocenteAula"
+           identity-type="datastore">
+                      
+      <field name="id"/>
+
+<!-- relacion N to 1 Con SolicitudDocenteAula-->
+      <field name="solicitudDocenteAula" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="comisiones"/>
+      </field>
+      
+<!-- relacion N to 1 Con ComisionSolicitud-->
+      <field name="comisionSolicitud" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="docentesSolicitud"/>
+      </field>
+
+    </class>
+    </package>
+</jdo>

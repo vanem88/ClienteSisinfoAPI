@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="ArchivoCompartidoAula"
+           identity-type="datastore">
+      <field name="id"/>
+      
+      <field name="compartido"/>     
+
+<!-- relacion N to 1 Con Aula-->
+      <field name="aula" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="materialAsociadoAlAula"/>
+      </field>
+       
+<!-- relacion N to 1 Con Archivo-->
+      <field name="archivo" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="aulasAsociadasAlMaterial"/>
+      </field>
+
+<!-- relacion N to 1 Con Carpeta-->
+      <field name="carpeta" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="materialAsociadoAlAula"/>
+      </field>
+
+<!-- relacion N to 1 Con Persona Con Navegabilidad simple-->
+ 	  <field name="persona" persistence-modifier="persistent">
+      </field>
+      
+     
+
+    </class>
+    </package>
+</jdo>

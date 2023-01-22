@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="PFormatoTabla"
+           identity-type="datastore"
+           persistence-capable-superclass="PreguntaEx">
+	<field name="descripcion">
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+	</field>
+
+<!-- relacion 1 a N con preguntas navegabilidad simple-->
+	<field name="preguntas">
+		<collection element-type="Frase">
+		</collection>
+	</field>
+
+<!-- relacion 1 a N con respuestas navegabilidad simple-->
+	<field name="respuestas">
+		<collection element-type="Frase">
+		</collection>
+	</field>
+
+<!-- relacion 1 a N con respCorrectas navegabilidad simple-->
+	<field name="respCorrectas">
+		<collection element-type="Frase">
+		</collection>
+	</field>
+
+	<field name="cantPreguntas"/>
+	<field name="cantRespuestas"/>
+    <field name="ordenAlfabetico"/>    
+    </class>
+    </package>
+</jdo>

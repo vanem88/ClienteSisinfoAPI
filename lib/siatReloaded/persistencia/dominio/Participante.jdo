@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Participante"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="observaciones" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="emailEad" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="inscriptoSIAL" >
+          <extension vendor-name="triactive" key="length" value="max 20"/>
+      </field>
+       <field name="condicion" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="fechaAlta"/>
+      <field name="comparteCarpeta"/>
+      <field name="fechaUltimoAcceso"/>
+      
+<!-- relacion 1 to N Con ParticipanteComision-->
+     <field name="participanteComisiones">
+        <collection element-type="ParticipanteComision">
+          <extension vendor-name="triactive" key="owner-field" value="participante" />
+        </collection>
+      </field>
+
+
+<!-- relacion N to 1 Con Persona-->
+      <field name="persona" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="participantes"/>
+      </field>
+
+<!-- relacion N to 1 Con TipoUsuario Navegabilidad Simple-->
+      <field name="tipoUsuario" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 Con Aula-->
+      <field name="aula" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="participantes"/>
+      </field>
+
+<!-- relacion N to 1 Con EstadoParticipante Navegabilidad Simple-->
+      <field name="estadoParticipante" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion N to 1 CuentaCorreo Navegabilidad Simple-->
+      <field name="cuentaCorreo" persistence-modifier="persistent">
+      </field>
+<!--/*CODIGO AGREGADO POR GRUPO CONDE-PEREYRA - TEMA: GRUPOS*/-->
+<!-- relacion 1 to N Con ParticipanteComision-->
+     <field name="participanteExcluidos">
+        <collection element-type="ParticipanteExcluido">
+          <extension vendor-name="triactive" key="owner-field" value="participante" />
+        </collection>
+      </field>
+<!--/*HASTA ACA*/-->
+     <field name="replicar"/>
+     
+     <!-- relacion N to 1 Con Persona Navegabilidad Simple -->
+      <field name="agregadoPor" persistence-modifier="persistent">
+      </field>
+      
+      <field name="agregadoDesde" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      
+    </class>
+    </package>
+</jdo>

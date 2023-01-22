@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Log"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="titulo" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+	  <field name="detalle" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+      <field name="observaciones" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+	  <field name="estado" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+<!-- relacion N to 1 Modulo-->
+      <field name="modulo" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="logs"/>
+      </field>
+<!-- relacion N to 1 Con Persona Navegabilidad Simple-->
+      <field name="persona" persistence-modifier="persistent">
+      </field>
+    </class>
+    </package>
+</jdo>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="EvaluacionFinalizadaConRespuestas"
+           identity-type="datastore"
+           persistence-capable-superclass="EvaluacionFinalizada">
+    
+   
+    <!-- relacion 1 a N con Respuestas navegabilidad doble-->
+	
+	<field name="respuestas">
+		<collection element-type="RespuestaEx">
+		 	  <extension vendor-name="triactive" key="owner-field" value="evaluacionFinalizadaConRespuestas" /> 
+		</collection>		
+	</field>
+	
+	
+	
+   <field name="estadoEx"> 
+		<extension vendor-name="triactive" key="length" value="max 255"/>
+	</field>
+	
+    </class>
+    </package>
+</jdo>

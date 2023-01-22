@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Comision"
+           identity-type="datastore"
+	     persistence-capable-superclass="Aula">
+
+<!-- relacion 1 to N Con ParticipanteComision-->
+     <field name="participanteComisiones">
+        <collection element-type="ParticipanteComision">
+          <extension vendor-name="triactive" key="owner-field" value="comision" />
+        </collection>
+      </field>
+
+<!-- relacion N to 1 Con CuentaCorreo Con Navegabilidad Simple-->
+      <field name="cuentaTutor" persistence-modifier="persistent">
+      </field>
+      
+      <field name="cupo" />
+
+    </class>
+    </package>
+
+</jdo>

@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Videoconferencia" identity-type="datastore">
+      <field name="id" />
+      <field name="nombreMostrar" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="nombre" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      
+      <field name="descripcion" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+      
+      <field name="urlSala" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+      
+      <field name="alcance">
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+      
+      <field name="fechaCreado"/>
+      <field name="grabar"/>
+      <field name="verificarGrabacion"/>
+      <field name="poseeGrabacion"/>
+      <field name="cantidadGrabaciones"/>
+      <field name="nombreGrabacion" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+     
+     <!-- relacion N to 1 Con Aula-->
+      <field name="aula" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="foros"/>
+      </field>
+      
+      <!-- relacion N to 1 Con Persona Navegabilidad Simple-->
+      <field name="autor" persistence-modifier="persistent">
+      </field>
+      
+      <!-- relacion N to 1 Con Archivo navegabilidad Simple-->
+      <field name="archivo" persistence-modifier="persistent">
+      </field>
+      
+  	  <field name="publicacion" persistence-modifier="persistent"> </field>
+  	  
+  	  <field name="eventoFinalizacion" persistence-modifier="persistent"> </field>
+  
+  <!-- relacion 1 to N Con Persona -->
+     <field name="moderadores">
+        <collection element-type="Persona">
+        </collection>
+      </field>
+
+     <field name="participantes">
+        <collection element-type="Persona">
+        </collection>
+      </field>
+
+     <field name="compartir">
+        <collection element-type="VideoconferenciaCompartir">
+                  <extension vendor-name="triactive" key="owner-field" value="videoconferencia" />
+        </collection>
+      </field>
+ 
+  <!-- relacion N to 1 Con VideoRepeticion-->
+      <field name="videoRepeticion" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="videoconfs"/>
+      </field>
+      
+      <field name="grabaciones">
+        <collection element-type="VideoGrabacion">
+                  <extension vendor-name="triactive" key="owner-field" value="videoconferencia" />
+        </collection>
+      </field>
+     </class>
+    </package>
+</jdo>

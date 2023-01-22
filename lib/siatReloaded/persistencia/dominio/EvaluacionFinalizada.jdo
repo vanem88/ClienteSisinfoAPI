@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="EvaluacionFinalizada"
+           identity-type="datastore">
+    <field name="id"/>
+
+<!-- relacion 1 to 1 Con Alumno-->
+      <field name="alumno" persistence-modifier="persistent">
+      </field>
+      
+<!-- relacion 1 to 1 Con Evaluacion-->
+      <field name="evaluacion" persistence-modifier="persistent">
+      </field>        	
+
+	<field name="fechaRealizacion"/>
+	
+	
+    <field name="dispositivoMovil"/>
+    
+    <field name="sistemaOperativo">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+    </field>
+   <field name="navegador">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+    </field>
+    
+    <field name="eliminado"/>
+    
+	</class>
+    </package>
+</jdo>

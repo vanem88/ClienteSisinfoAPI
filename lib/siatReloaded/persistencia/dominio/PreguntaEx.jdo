@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="PreguntaEx"
+           identity-type="datastore">
+
+      <field name="id"/>
+
+      <field name="puntuacion">
+		<collection element-type="Puntuacion">
+		</collection>		
+	  </field>  
+	
+      <field name="tipoPreg">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      
+      <!-- relacion 1 a 1 con persona navegabilidad simple-->
+      <field name="persona" persistence-modifier="persistent">
+      </field>
+      
+      <field name="deCuestionario"/>
+         
+      <field name="adjuntos">
+		<collection element-type="Archivo">
+		</collection>		
+	  </field>  
+      
+    </class>
+    </package>
+</jdo>

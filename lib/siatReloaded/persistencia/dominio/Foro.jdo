@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Foro"
+           identity-type="datastore">
+      <field name="id" />
+      <field name="asunto" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="fecha"/>
+      <field name="pathArchivo" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+ 
+     <field name="mensajes">
+        <collection element-type="Mensaje">
+          <extension vendor-name="triactive" key="owner-field" value="foro" />
+        </collection>
+      </field>
+
+<!-- relacion N to 1 Con Aula-->
+      <field name="aula" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="foros"/>
+      </field>
+
+<!--/*CODIGO AGREGADO POR GRUPO CONDE-PEREYRA - TEMA: GRUPOS*/-->  
+       <field name="paraQuien">
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+       <field name="alcance">
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+  <!-- relacion 1 to N Con ForoGrupal-->
+     <field name="forosGrupales">
+        <collection element-type="ForoGrupal">
+          <extension vendor-name="triactive" key="owner-field" value="foro" />
+        </collection>
+      </field>
+<!--/*HASTA ACA*/--> 
+
+<!--Nuevo FORO-->
+
+<!-- relacion N to 1 Con Persona Navegabilidad Simple-->
+      <field name="autor" persistence-modifier="persistent">
+      </field>
+
+<!-- relacion 1 to N Con Persona -->
+     <field name="moderadores">
+        <collection element-type="Persona">
+        </collection>
+      </field>
+
+	<!-- relacion N to 1 Con Texto con Navegabilidad simple-->
+      <field name="eventoFinalizacion" persistence-modifier="persistent">
+      </field>
+      <field name="publicacion" persistence-modifier="persistent">
+      </field> 
+<!-- Fin de Modificado por MLucero -->
+ 	  <field name="duplicado" />
+ 	
+<!--Fin Nuevo FORO-->
+    </class>
+    </package>
+</jdo>

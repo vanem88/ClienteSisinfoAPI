@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="RespuestaExOrdenOpcion"   identity-type="datastore">
+      <field name="id"/>
+      <field name="orden"/>
+
+<!-- relacion N to 1 Con Aula-->
+      <field name="frase" persistence-modifier="persistent">
+      </field>
+     
+<!-- relacion N to 1 Con TipoRecurso Navegabilidad Simple-->
+      <field name="respuestaEx" persistence-modifier="persistent">
+      </field>
+
+
+    </class>
+    </package>
+</jdo>

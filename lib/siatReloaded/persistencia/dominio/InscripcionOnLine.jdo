@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="InscripcionOnLine"
+           identity-type="datastore">
+      <field name="id"/>
+      <field name="fechaInicio"/>
+      <field name="fechaFin"/>
+      <field name="descripcion" >
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+      </field>
+      <field name="estado" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>      
+      <field name="codigo" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+
+      <field name="cupoLimitado" />
+
+      <field name="codigoEstudiante" >
+            <extension vendor-name="triactive" key="length" value="max 5"/>
+       </field>
+       <field name="codigoDocente" >
+            <extension vendor-name="triactive" key="length" value="max 5"/>
+       </field>
+       <field name="codigoAdministrador" >
+            <extension vendor-name="triactive" key="length" value="max 5"/>
+       </field>
+
+    </class>
+    </package>
+</jdo>

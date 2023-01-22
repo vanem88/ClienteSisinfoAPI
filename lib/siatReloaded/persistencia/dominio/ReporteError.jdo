@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="ReporteError"
+           identity-type="datastore">
+      <field name="id"/>
+
+      <field name="mensajeError" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+	  <field name="clase" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+	  <field name="archivo" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+   	  <field name="metodo" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      <field name="linea"/>
+      <field name="fecha"/>
+      <field name="cantidad"/>      
+    </class>
+    </package>
+</jdo>

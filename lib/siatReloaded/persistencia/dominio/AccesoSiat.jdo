@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="AccesoSiat" identity-type="datastore">
+      <field name="id"/>
+	  <field name="fecha"/>
+      <field name="ayer" />
+      <field name="hoy" />
+      <field name="totalesHastaLaFecha" />
+      <field name="ayerGoogle" />
+      <field name="ayerFacebook" />
+      <field name="ayerTwitter" />
+      <field name="ayerComun" />
+      <field name="ayerSiat" />      
+    </class>
+    </package>
+</jdo>

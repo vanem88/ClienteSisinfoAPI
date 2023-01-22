@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Nota"
+           identity-type="datastore">
+      <field name="id"/>
+      
+      <field name="observaciones" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+
+	<!-- relacion N to 1 Con Persona Navegabilidad Simple-->
+      <field name="persona" persistence-modifier="persistent">
+      </field>
+            
+    <!-- relacion N to 1 Con Actividad-->
+      <field name="actividad" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="notas"/>
+      </field>
+      
+    <!-- relacion N to 1 Con Archivo navegabilidad Simple-->
+      <field name="archivo" persistence-modifier="persistent">
+      </field>
+      
+      <field name="fecha"/>
+    
+    <!-- relacion N to 1 Con EstadoNota Navegabilidad Simple-->
+      <field name="estadoNota" persistence-modifier="persistent">
+      </field>  
+      
+      <field name="descripcionAlumno" >
+          <extension vendor-name="triactive" key="length" value="max 2000"/>
+      </field>
+      
+	  <field name="fechaProrroga"/>
+
+	<!-- relacion N to 1 Con Persona Navegabilidad Simple-->
+      <field name="personaRealizoEntrega" persistence-modifier="persistent">
+      </field>      
+           
+      <field name="calificacionIndividual" persistence-modifier="persistent">
+      </field>
+      
+	  <field name="calificacionGrupal" persistence-modifier="persistent">
+      </field>
+
+    
+      
+    </class>
+    </package>
+</jdo>

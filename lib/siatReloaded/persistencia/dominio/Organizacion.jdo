@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Organizacion"
+           identity-type="datastore"
+	     persistence-capable-superclass="AulaCompuesta">
+
+	<!-- relacion 1 to 1 Con PlantillaPermiso con Navegabilidad simple-->    
+    <field name="plantillaPermisosAulas" persistence-modifier="persistent">
+    </field>
+
+    </class> 
+    </package>
+</jdo>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="NotificacionRuta"
+           identity-type="datastore">
+      <field name="id"/>
+
+      <!-- relacion N to 1 Con Participante-->
+      <field name="participanteOrigen" persistence-modifier="persistent">
+      </field>   
+
+      <!-- relacion N to 1 Con Participante-->
+      <field name="participanteDestino" persistence-modifier="persistent">
+      </field>
+
+      <!-- relacion N to 1 Con Ruta-->
+      <field name="ruta" persistence-modifier="persistent">
+      </field>
+
+       <field name="mensaje" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field> 
+
+      <field name="aprobado" />  
+
+      <field name="fecha"/>
+
+    </class>
+    </package>
+</jdo>

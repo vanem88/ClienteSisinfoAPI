@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="Evaluacion"
+           identity-type="datastore">
+
+      <field name="id"/>
+
+      <field name="nombre">
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+      </field>
+      
+      <!-- relacion 1 a N con Preguntas navegabilidad simple-->
+	<field name="preguntas">
+		<collection element-type="PreguntaEx">
+		</collection>		
+	</field>
+	
+<!-- relacion N to 1 Con Aula navegabilidad simple-->
+      <field name="aula" persistence-modifier="persistent">
+      </field>   	
+	<field name="publicado"/>      
+	<field name="eliminado"/>   
+ 	<field name="fechaHoraInicio"/>	
+ 	<field name="fechaHoraFin"/>
+ 	<field name="detalles">
+          <extension vendor-name="triactive" key="length" value="max 1000"/>
+    </field>
+    
+    <field name="ordenSecuencial"/>
+      
+    <field name="pregsAleatorias"/>  
+    <field name="cantidadPAleatorias"/>          
+    <field name="cantidadPObligatorias"/>   
+	<field name="mostrarRtasAlumno"/>   
+	<field name="publicacionAutomatica"/>   	               
+    
+    <!-- relacion 1 to 1 Con Alumno-->
+      <field name="persona" persistence-modifier="persistent">
+      </field>
+      
+      <!-- relacion 1 a N con Preguntas navegabilidad simple-->
+	<field name="compartirCon">
+		<collection element-type="Persona">
+		</collection>		
+	</field>
+	<field name="conPregCategorias"/>
+	<!-- relacion 1 a N con CategoriaPregunta navegabilidad simple-->
+	<field name="categoriasEval">
+		<collection element-type="CategoriaPregunta">
+		</collection>		
+	</field>
+	
+	<!-- relacion N to 1 Con Texto con Navegabilidad simple-->
+      <field name="eventoFinalizacion" persistence-modifier="persistent">
+      </field>
+    <field name="generarEvento"/>  
+    <field name="entregaAutomaticaFecha"/>
+    <field name="enNivelAula"/>
+    <field name="editarDesdeComision"/>
+    
+    <field name="alcanceAlgunos"/>
+    
+    <!-- relacion 1 a N con alumnos navegabilidad simple-->
+	<field name="alumnos">
+		<collection element-type="Persona">
+		</collection>		
+	</field>
+      <field name="duplicado" />
+	</class>
+    </package>
+</jdo>

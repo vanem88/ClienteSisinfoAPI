@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="SolicitudDocenteAula"
+           identity-type="datastore">
+           
+      <field name="id"/>
+      
+       <field name="esAdministrador"/>
+        <field name="interno" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+       </field>
+       
+       <field name="comisionDeDocente" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+       </field>
+       <field name="rol" >
+          <extension vendor-name="triactive" key="length" value="max 255"/>
+       </field>
+
+<!-- relacion N to 1 Con SolicitudAula-->
+      <field name="solicitudAula" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="equipoDocente"/>
+      </field>
+      
+<!-- relacion N to 1 Con DocenteSolicitado-->
+      <field name="docenteSolicitado" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="solicitudes"/>
+      </field>
+      
+<!-- relacion 1 to N Con ComisionSolicitudDocenteAula-->
+      <field name="comisiones">
+        <collection element-type="ComisionSolicitudDocenteAula">
+          <extension vendor-name="triactive" key="owner-field" value="solicitudDocenteAula" />
+        </collection>
+      </field>
+
+    </class>
+    </package>
+</jdo>

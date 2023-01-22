@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="RecursoSolicitado"
+           identity-type="datastore">
+           
+      <field name="id"/>
+      
+<!-- relacion N to 1 Con Recurso Navegabilidad Simple-->
+      <field name="recursoUtilizado" persistence-modifier="persistent">
+      </field>
+      
+<!-- relacion N to 1 Con RecursoMigracion Navegabilidad Simple-->
+      <field name="recursoMigracion" persistence-modifier="persistent">
+      </field>
+      
+
+<!-- relacion N to 1 Con SolicitudAula-->
+      <field name="solicitudAula" persistence-modifier="persistent">
+          <extension vendor-name="triactive" key="collection-field" value="recursosUtilizados"/>
+      </field>
+      
+      <!-- relacion N to 1 Con Recurso Navegabilidad Simple-->
+      <field name="herramientaUsar" persistence-modifier="persistent">
+      </field>
+
+    </class>
+    </package>
+</jdo>

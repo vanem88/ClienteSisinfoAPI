@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
+
+<jdo>
+    <package name="persistencia.dominio">
+    <class name="RegistroPersona" identity-type="datastore">
+    
+      <field name="id"/>
+      <field name="apellido" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+      <field name="nombre" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+      <field name="tipoDoc" >
+          <extension vendor-name="triactive" key="length" value="max 20"/>
+      </field>
+      <field name="numeroDoc" >
+          <extension vendor-name="triactive" key="length" value="max 30"/>
+      </field>
+      <field name="email" >
+          <extension vendor-name="triactive" key="length" value="max 100"/>
+      </field>
+      <field name="nacionalidad" >
+          <extension vendor-name="triactive" key="length" value="max 50"/>
+      </field>
+     
+      <field name="fechaRegistro"/>
+      
+<!-- relacion N to 1 Con Ciudad Con Navegabilidad simple-->
+      <field name="ciudad" persistence-modifier="persistent">
+      </field>
+      
+      <field name="inscribirEn" persistence-modifier="persistent">
+      </field>
+	  <!-- relacion 1 to 1 Con  Navegabilidad Simple-->
+      <field name="dniEscaneado" persistence-modifier="persistent">
+      </field>
+    </class>
+    </package>
+</jdo>
